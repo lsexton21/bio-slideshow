@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate')%>
+<% let counter = 0 %>
+<h1>List of Students in DB</h1> 
+<a href='/admin'> Back to Admin 
+<br>
+<a href='/students/new'> New Student
+</a>
+<ul>
+    <% for (let student of students) { %>
+        <li><%=student.firstName%> <%=student.lastName%> [<%=student.instaName%>] <a href='/students/<%=student._id%>/edit'>Edit</a></li>
+        <% counter++ %>
+    <%} %>
+</ul>
+Total Students (<%=counter%>)

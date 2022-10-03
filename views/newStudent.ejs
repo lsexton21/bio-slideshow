@@ -1,0 +1,18 @@
+<% layout('layouts/boilerplate')%>
+<form action="/students" method="POST">
+    <div>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="student[firstName]">
+    </div>
+    <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="student[lastName]">
+    </div>
+    <div>
+        <label for="instaName">Instagram Name</label>
+        <input type="text" id="instaName" name="student[instaName]">
+    </div>
+    <button>Add Student</button>
+</form>
+<a href="/students">All Students</a>
+<a href="/students/edit">Edit Student</a>

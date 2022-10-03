@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate')%>
+<% let counter = 0 %>
+<h1>List of usernames in DB</h1> 
+<a href='/admin'> Back to Admin
+</a>
+<ul>
+    <% for (let user of users) { %>
+        <li><%=user.username%> <a href='/users/<%=user._id%>/delete'>Delete</a></li>
+        <% counter++ %>
+    <%} %>
+</ul>
+Total Registered (<%=counter%>)

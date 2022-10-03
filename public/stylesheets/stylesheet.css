@@ -1,0 +1,251 @@
+main {
+  background-color: white;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  position: relative;
+  left: 20px;
+  top: 10px;
+}
+
+h1 {
+  width: 200px;
+  height: 150px;
+  color: black;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-size: 40px;
+}
+
+#tinyTitleFont {
+  font-size: small;
+}
+.navItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  position: relative;
+  padding-right: 20px;
+}
+
+#quarterList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-right: 4px solid gray;
+  position: relative;
+  list-style-type: none;
+  padding-right: 20px;
+}
+.quarterListItem {
+  margin: 10px;
+}
+
+.hashtagList {
+  position: relative;
+  list-style-type: none;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.quarter {
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.navSpacer {
+  list-style-type: none;
+  height: 7px;
+  width: 7px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.hashtag,
+.quarter {
+  position: relative;
+  padding: 2px 0px;
+  display: block;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 1.5rem;
+  color: gray;
+  border: none;
+  background-color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.hashtag::after,
+.quarter::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #493271;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.hashtag:hover,
+.quarter:hover {
+  color: black;
+}
+
+.hashtag:hover::after,
+.quarter:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.toggleControlsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  top: 500px;
+}
+.toggleControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "PT Sans Narrow", sans-serif;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 120px;
+  width: 60px;
+}
+
+.toggleControls:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 5px 5px 20px black;
+}
+.toggleControls:active {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 20px white;
+}
+
+#toggleBackwards {
+  border-radius: 100% 0% 0% 100%;
+  position: relative;
+  right: 10px;
+  bottom: 20px;
+}
+
+#toggleForwards {
+  border-radius: 0% 100% 100% 0%;
+}
+.rightToggleControlsContainer {
+  position: relative;
+  left: 15px;
+  bottom: 20px;
+  width: 75px;
+  height: 40vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.playPauseBtnContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.playPauseControls {
+  text-align: center;
+  font-size: 25px;
+  height: 60px;
+  width: 60px;
+  border-radius: 10%;
+  line-height: 80%;
+  margin: 5px;
+}
+
+#fullScreenBtn {
+  font-size: 25px;
+}
+
+#fullScreenIcon {
+  padding: 10px;
+}
+
+#compressScreenIcon {
+  padding: 10px;
+  display: none;
+}
+
+#row_2 {
+  height: 920px;
+  border-radius: 20% 0% 0% 0%;
+  background-color: #b9ece7;
+  background-color: #493271;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  bottom: 115px;
+  box-shadow: 0px -5px 30px white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.cardRow {
+  position: absolute;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  width: 90vw;
+  padding: 0px;
+  margin: 0px;
+}
+
+.flipControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100px;
+  bottom: 120px;
+  background-color: #493271;
+}
+
+.navbar-custom {
+  background-color: #006d77;
+  box-shadow: 0px -5px 30px black;
+}
+
+#footer {
+  position: relative;
+  bottom: 115px;
+}

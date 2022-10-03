@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id='navbar'>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">HTHI BioLab</a>
+    <div class="navbar-nav ml-auto">
+      <% if (!currentUser) { %> 
+      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/register">Register</a>
+      <% } else { %>
+      <a class="nav-link" href='/admin'> Admin Menu
+      <a class="nav-link" href="/logout">Logout</a> 
+      <% } %>
+    </div>
+  </div>
+</nav>
