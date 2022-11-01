@@ -11,7 +11,6 @@ const dbUrl = process.env.DB_URL;
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
-// link to local mongo DB: mongodb://localhost:27017/biologyWeb
 const methodOverride = require("method-override");
 const AppError = require("./public/utilities/AppError");
 const passport = require("passport");

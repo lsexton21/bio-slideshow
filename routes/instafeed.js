@@ -100,8 +100,7 @@ router.get(
     }
 
     let instaData = [];
-    const page1 =
-      "https://graph.instagram.com/v12.0/17841403931536376/media?access_token=IGQVJWQ0hpRnVTZAUkyTlAwVnZA4MWtjckRiR1BvVDM5MVA0SEFhaDlEUE50Y2xmdjNibm5mdjJWTmdjc2lTcFRiV1NPUDhCODJHU0pra1VVU0ZASQ0VvdjJ3bERMUmtuTTlLRWVwVkt1cnZA6MC10VlBFMAZDZD&pretty=1&fields=id,media_type,media_url,caption,timestamp&limit=100";
+    const page1 = `https://graph.instagram.com/v12.0/17841403931536376/media?access_token=${process.env.INSTAGRAM_ACCESS_TOKEN}&pretty=1&fields=id,media_type,media_url,caption,timestamp&limit=100`;
     const page2 = await fetchInstaPagination(page1);
     const page3 = await fetchInstaPagination(page2);
     const page4 = await fetchInstaPagination(page3);
