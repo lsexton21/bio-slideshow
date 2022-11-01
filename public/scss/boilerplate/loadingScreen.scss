@@ -7,12 +7,15 @@
     border-radius: 20rem 0% 0% 0%;
     overflow: hidden;
     background: $color-background;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
 
     #instaLogoContainer {
         @include flexbox(row, center, flex-end);
         height: 15rem;
         width: 12rem;
-        margin: 5rem;
+        margin-top: 10rem;
 
         #instaLogoResizeContainer {
             transform: translateY(0);

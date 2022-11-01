@@ -1,9 +1,9 @@
 #page {
-    @include flexbox(column, center, center);
-    height: calc(100vh - 18rem);
-    width: 100vw;
-    transition: opacity 1s;
-    font-family: "PT Sans Narrow", sans-serif;
+  @include flexbox(column, center, center);
+  height: calc(100vh - 16rem);
+  width: 100vw;
+  transition: opacity 1s;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 #welcomeMsg {
