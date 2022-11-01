@@ -1056,7 +1056,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 84rem;
+  height: calc(100vh - 18rem);
   width: 100vw;
   transition: opacity 1s;
   font-family: "PT Sans Narrow", sans-serif;
