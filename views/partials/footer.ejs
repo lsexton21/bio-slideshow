@@ -1,14 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id='footer'>
-    <div class="container-fluid" id=footerContainer>
-      <span>&copy; HTHI BioLab 2022</span>
-      <div class="navbar-nav ml-auto">
-        <% if (!currentUser) { %> 
-        <a class="nav-link" href="/login">Login</a>
-        <!--<a class="nav-link" href="/register">Register</a>>-->
-        <% } else { %>
-        <a class="nav-link" href='/admin'> Admin Menu
-        <a class="nav-link" href="/logout">Logout</a> 
-        <% } %>
-      </div>
-    </div>
-</nav>
+<footer class="footer">
+  <div class="footerText">
+    <h2>&#169 2022 BioLab at HTHI</h2>
+    <a href="/login">Admin</a>
+  </div>
+</footer>

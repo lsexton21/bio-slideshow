@@ -1,0 +1,25 @@
+.footer {
+    @include flexbox(row, center, flex-end);
+    height: 8rem;
+    width: 100%;
+
+    @include respond(tablet-portrait) {
+        display: none;
+    }
+
+    .footerText {
+        @include flexbox(row, space-evenly, center);
+        height: 5rem;
+        width: 30rem;
+        border: 1px solid $color-cardBorder;
+        background-color: $color-card;
+        border-radius: 15rem 15rem 0 0;
+
+        a {
+            text-decoration: none;
+            color: $color-black;
+            font-size: 1.5rem;
+        }
+    }
+    
+}

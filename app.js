@@ -75,7 +75,7 @@ passport.deserializeUser(User.deserializeUser());
 //importing routes from other files
 const userRoutes = require("./routes/users");
 const studentRoutes = require("./routes/students");
-const bioLabDisplayRoutes = require("./routes/bioLabDisplay");
+const instafeed = require("./routes/instafeed");
 const { isLoggedIn } = require("./routes/isLoggedInMiddleware");
 
 //flash and currentUser middleware
@@ -88,19 +88,15 @@ app.use((req, res, next) => {
 
 app.use("/", userRoutes);
 app.use("/students", studentRoutes);
-app.use("/instafeed", bioLabDisplayRoutes);
+app.use("/instafeed", instafeed);
 
 //Other routes, not imported
 app.get("/", (req, res) => {
-  res.redirect("/instafeed/hthibiologyfall2021q2");
+  res.render("pages/welcome");
 });
 
 app.get("/admin", isLoggedIn, (req, res, next) => {
-  res.render("admin");
-});
-
-app.get("/instafeedDevelopment", isLoggedIn, (req, res, next) => {
-  res.render("instafeedDevelopment");
+  res.render("admin/adminHomepage");
 });
 
 //Catch all 404s

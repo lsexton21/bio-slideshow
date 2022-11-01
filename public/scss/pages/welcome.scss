@@ -1,0 +1,84 @@
+#page {
+    @include flexbox(column, center, center);
+    height: 84rem;
+    width: 100vw;
+    transition: opacity 1s;
+    font-family: "PT Sans Narrow", sans-serif;
+}
+
+#welcomeMsg {
+    color: white;
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    p {
+      margin-top: 3rem;
+      font-size: 2rem;
+    }
+}
+
+#instaLogo {
+    height: 8rem;
+    width: 8rem;
+    margin: 5rem;
+}
+
+#phrase_box {  
+  @include flexbox(column, center, center);
+  height: 20rem;
+  overflow: hidden;
+  width: 30rem;
+  border-radius: 0.5rem;
+  margin-left: 9rem;
+}
+
+#phrases {
+  animation: slide-phrases-upward 30s;
+}
+
+@keyframes slide-phrases-upward {
+  @for $i from 0 through 20 {
+    #{$i * 5%} {
+      transform: translateY($i * -5rem);
+    }
+  }
+}
+
+@for $i from 0 through 20 {
+  #loadingCheckCircleSVG-#{$i} {
+    animation: fill-to-white 5000ms;
+    animation-delay: ($i - 1.5) * 1.5s;
+    fill: white;
+    opacity: 0;
+  }
+}
+@keyframes fill-to-white {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@for $i from 0 through 20 {
+  #loadingCheckSVG-#{$i} {
+    animation: fill-to-coral 5000ms;
+    animation-delay: ($i - 1.5) * 1.5s; 
+    opacity: 0;  
+    fill: $background-mid;
+  }
+}
+@keyframes fill-to-coral {
+  0% {
+    opacity: 0
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,30 @@
+.main {
+  @include flexbox(column, flex-start, center);
+  width: 100vw;
+  border-radius: 20rem 0 0 0;
+  background: $color-background;
+  overflow: hidden;
+  height: calc(100vh - 8rem);
+  min-height: 88rem;
+
+    .controlsAndCards {
+      @include flexbox(row, center, flex-start);
+      margin-top: 5rem;
+      height: calc(100vh - 16rem);
+      min-height: 75rem;
+
+      @include respond(tablet-portrait) {
+        min-height: 0rem;
+        margin-top: 0rem;
+      }
+    }
+
+    @include respond(tablet-portrait) {
+      @include flexbox(column, space-between, center);
+      border-radius: 10rem 0 0 0;
+    }
+
+    @include respond(phone-portrait-large) {
+      border-radius: 5rem 0 0 0;
+    }
+  }

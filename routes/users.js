@@ -37,8 +37,10 @@ router.post(
 );
 
 router.get("/login", (req, res) => {
-  res.render("login");
-  ``;
+  if (req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+  res.render("users/login");
 });
 
 router.post(
@@ -58,7 +60,7 @@ router.post(
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success", "You have successfully logged out.");
-  res.redirect("login");
+  res.redirect("/login");
 });
 
 router.get(
@@ -66,7 +68,7 @@ router.get(
   isLoggedIn,
   catchAsync(async (req, res, next) => {
     const users = await User.find({});
-    res.render("listusers", { users });
+    res.render("users/listusers", { users });
   })
 );
 

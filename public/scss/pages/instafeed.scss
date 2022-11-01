@@ -1,0 +1,666 @@
+.cardRow {
+  @include flexbox(row, space-between, center);
+  width: 104rem;
+  display: none;
+
+  @include respond(tablet-portrait) {
+    @include flexbox(column, center, space-around);
+    display: none;
+  }
+}
+
+.card {
+  visibility: hidden;
+  height: 75rem;
+  width: 33rem;
+  position: relative;
+
+  @include respond(tablet-portrait) {
+    height: 41rem;
+    width: 86rem;
+    margin-top: 2rem;
+  }
+
+
+  .cardSide {
+    opacity: 1;
+    visibility: visible;
+    @include flexbox(column, center, center);
+    backface-visibility: hidden;
+
+    @include respond(tablet-portrait) {
+      @include flexbox(row, center, center);
+    }
+  }
+
+  .cardSideBack {
+    position: relative;
+    bottom: 75rem;
+    backface-visibility: hidden;
+
+    @include respond(tablet-portrait) {
+      bottom: 41rem;
+    }
+  }
+
+  .textbox {
+    height: 44.5rem;
+    width: 33rem;
+    background-color: $color-card;
+    border: 0.1rem solid $color-cardBorder;
+    @include flexbox(column, flex-end, center);
+    border-radius: 1rem;
+    color: $color-cardText;
+    font-family: "PT Sans Narrow", sans-serif;
+
+    @include respond(tablet-portrait) {
+      @include flexbox(column, flex-start, flex-end);
+      padding-right: 1rem;
+      height: 41rem;
+      width: 36rem;
+    }
+    
+
+    .dateAndCaption {
+      @include flexbox(column, center, center);
+        height: 19rem;
+        width: 31rem;
+
+      @include respond(tablet-portrait) {
+        height: 19rem;
+        width: 32rem;
+      }
+      .date {
+        @include flexbox(row, right, flex-end);
+        height: 5rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
+        color: $color-black;
+        font-size: 2.3rem;
+        font-weight: 300;
+
+        @include respond(tablet-portrait) {
+          margin-right: 1rem;
+          width: 100%;
+          height: 5rem;
+          font-size: 2.3rem;
+        }
+      }
+      
+      .caption {
+        height: 12rem;
+        width: 100%;
+        box-shadow: inset 0.1rem 0.1rem 0.2rem black;
+        background-color: $color-textbox;
+        font-family: "PT Sans Narrow", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 100;
+        padding: 1rem;
+        padding-top: 0.5rem;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        border-radius: 0.5rem;
+
+        @include respond(tablet-portrait) {
+          width: 32rem;
+          height: 13rem;
+        }
+      }
+      }
+
+    .profiles {
+      @include flexbox(column, center, space-between);
+      box-shadow: inset 0.1rem 0.1rem 0.2rem black;
+      width: 31rem;
+      height: 23rem;
+      background-color: $color-textbox;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      font-weight: 300;
+
+      @include respond(tablet-portrait) {
+        @include flexbox(column, flex-start, center);
+        width: 32rem;
+        height: 21rem;
+      }
+
+      .sampleText {
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+        font-weight: 300;
+      }
+
+      .profileList {
+        @include flexbox(row, space-evenly, center);
+        height: 18rem;
+
+        @include respond(tablet-portrait) {
+          @include flexbox(row, space-evenly, center);
+          width: 30rem;
+        }
+
+        .projectProfile {
+          @include flexbox(row, space-between, center);
+          width: 100%;
+
+          .projectPicContainer {
+            @include flexbox(column, center, center);
+            width: 15rem;
+
+            .projectPic {
+              height: 6rem;
+              width: 6rem;
+              margin: 0.4rem;
+              background-color: $color-black;
+              border-radius: 50%;
+              border: 0.1rem solid white;
+            }
+            .projectTitle {
+              overflow-wrap: break-word;
+              font-size: 1.6rem;
+              font-weight: bold;
+              margin: 0.4rem;
+              text-align: center;
+            }
+          }
+
+          .spacer {
+            width: 0.3rem;
+            height: 15rem;
+            background-color: black;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+
+          .projectNamesContainer {
+            @include flexbox(column, center, flex-start);
+            width: 23rem;
+            margin-left: 0.7rem;
+          }
+          
+          .projectNameContainer {
+            @include flexbox (row, center, center);
+
+            .projectNamesPic {
+              height: 5rem;
+              width: 5rem;
+              margin: 0.3rem;
+              border-radius: 50%;
+              border: 0.1rem solid black;
+            }
+            
+            .projectNames {
+              font-size: 1.8rem;
+              margin-left: 0.5rem;
+              text-align: left;
+              overflow-wrap: break-word;
+            }
+          }
+        }
+
+        .profile {
+          @include flexbox(column, space-around, flex-start);
+
+          @include respond(tablet-portrait) {
+            @include flexbox(column, space-around, center);
+          }
+
+          .profilePic {
+            @include flexbox(row, center, center);
+            height: 9rem;
+            width: 9rem;
+            margin-top: 0.5rem;
+            border-radius: 50%;
+            border: 0.2rem solid $color-black;
+
+            @include respond(tablet-portrait) {
+              
+            }
+          }
+          
+          .profileName {
+            @include flexbox(row, center, flex-start);
+            font-weight: lighter;
+            text-align: center;
+            width: 100%;
+            height: 5rem;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+          }
+        }
+      }
+
+    }
+  }
+
+  .img {
+    height: 30rem;
+    width: 30rem;
+    position: relative;
+    top: 2rem;
+    background-color: white;
+    box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.8rem $color-imgBorder;
+    border-radius: 10%;
+
+    @include respond(tablet-portrait) {
+      top: 0rem;
+      left: 1rem;
+      height: 28rem;
+      width: 28rem;
+    }
+  }
+}
+
+.card1 {
+  animation: cardPlacement1 ease-in-out 40s infinite;
+}
+
+.card2 {
+  animation: cardPlacement2 ease-in-out 40s infinite;
+}
+
+.card3 {
+  animation: cardPlacement3 ease-in-out 40s infinite;
+}
+
+.card1Front {
+  animation: card1FrontFlip ease-in-out 40s infinite;
+}
+
+.card2Front {
+  animation: card2FrontFlip ease-in-out 40s infinite;
+}
+
+.card3Front {
+  animation: card3FrontFlip ease-in-out 40s infinite;
+}
+
+.card1Back {
+  animation: card1BackFlip ease-in-out 40s infinite;
+}
+
+.card2Back {
+  animation: card2BackFlip ease-in-out 40s infinite;
+}
+
+.card3Back {
+  animation: card3BackFlip ease-in-out 40s infinite;
+}
+
+.toggleControls {
+    @include flexbox(column, space-around, center);
+    font-weight: bold;
+    font-family: "PT Sans Narrow", sans-serif;
+    height: 75rem;
+    width: 8rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    @include respond(tablet-portrait) {
+      display: none;
+    }
+
+    .controlsSpacer {
+        height: 20rem;
+        width: 5rem;
+    }
+
+    .playPauseBtnContainer {
+        height: 20rem;
+        position: relative;
+        @include flexbox(column, flex-end, flex-end);
+        padding: 0.5rem;
+    }
+    
+    button {
+        border: 0.1rem solid white;
+        background-color: rgba(251, 251, 251, 0.267);
+        color: black;
+        font-size: 5rem;
+    
+        &:hover {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0.5px 0.5px 2rem black;
+        }
+    
+        &:active {
+            background-color: rgb(255, 255, 255);
+        }
+    }
+
+    #toggleBackwards {
+        border-radius: 100% 0% 0% 100%;
+        width: 5rem;
+        height: 10rem;
+    }
+        
+    #toggleForwards {
+        border-radius: 0% 100% 100% 0%;
+        width: 5rem;
+        height: 10rem;
+    }
+
+    .playPauseControls {
+    text-align: center;
+    font-size: 2.3rem;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 10%;
+    line-height: 80%;
+    margin: 0.5rem;
+    }
+
+    #fullScreenBtn {
+        font-size: 2.5rem;
+        }
+        
+        #fullScreenIcon {
+        padding: 1rem;
+        }
+        
+        #compressScreenIcon {
+        padding: 1rem;
+        display: none;
+        }
+}
+
+.toggleControlsPhone {
+  height: 8rem;
+  width: 100%;
+  display: none;
+  font-size: 7rem;
+  position: sticky;
+  bottom: 0;
+  border: 1px solid $color-cardBorder;
+  
+
+  .togglePhoneArrows {
+    height: 100%;
+    width: 100%;
+    border: 1px solid $color-cardBorder;
+    background-color: $color-card;
+    border: 1px solid $color-cardBorder;
+    @include flexbox(row, center, center);
+  }
+
+  #togglePhonePlayPause {
+    position: absolute;
+    left: calc(50% - 3.5rem);
+    top: 0.5rem;
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    font-weight: 600;
+    background-color: rgb(147, 163, 141);
+
+    #playSymbol {
+      display: none;
+      font-size: 4rem;
+    }
+
+    #pauseSymbol {
+      font-size: 4rem;
+    }
+  }
+
+  @include respond(tablet-portrait) {
+    display: flex !important;
+    
+  }
+}
+
+
+@keyframes cardPlacement1 {
+  0% {
+    top: 150rem;
+  }
+  2.5% {
+    top: 0rem;
+  }
+  95.5% {
+    top: 0rem;
+  }
+  98% {
+    top: 150rem;
+  }
+  100% {
+    top: 150rem;
+  }
+}
+
+@keyframes cardPlacement2 {
+  0% {
+    top: 150rem;
+  }
+  1% {
+    top: 150rem;
+  }
+  3.5% {
+    top: 0rem;
+  }
+  96.5% {
+    top: 0rem;
+  }
+  99% {
+    top: 150rem;
+  }
+  100% {
+    top: 150rem;
+  }
+}
+
+@keyframes cardPlacement3 {
+  0% {
+    top: 150rem;
+  }
+  2% {
+    top: 150rem;
+  }
+  4.5% {
+    top: 0rem;
+  }
+  97.5% {
+    top: 0rem;
+  }
+  100% {
+    top: 150rem;
+  }
+}
+
+@keyframes card1FrontFlip {
+  0% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+  47% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+  49% {
+    opacity: 0;
+    transform: rotatey(180deg);
+  }
+  93% {
+    transform: rotatey(180deg);
+  }
+  98% {
+    transform: rotatey(180deg);
+  }
+}
+
+@keyframes card2FrontFlip {
+  1% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+  48% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotatey(180deg);
+  }
+  94% {
+    transform: rotatey(180deg);
+  }
+  99% {
+    transform: rotatey(180deg);
+  }
+}
+@keyframes card3FrontFlip {
+  2% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+  49% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+  51% {
+    opacity: 0;
+    transform: rotatey(180deg);
+  }
+  95% {
+    transform: rotatey(180deg);
+  }
+  100% {
+    transform: rotatey(180deg);
+  }
+}
+
+@keyframes card1BackFlip {
+  0% {
+    opacity: 0;
+    transform: rotatey(-180deg);
+  }
+  47% {
+    transform: rotatey(-180deg);
+  }
+  47.8% {
+    opacity: 0
+  }
+  47.9% {opacity: 1}
+  49% {
+    transform: rotatey(0deg);
+  }
+  93% {
+    transform: rotatey(0deg);
+  }
+  98% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+}
+@keyframes card2BackFlip {
+  1% {
+    opacity: 0;
+    transform: rotatey(-180deg);
+  }
+  48% {
+    transform: rotatey(-180deg);
+  }
+  48.8% {
+    opacity: 0
+  }
+  48.9% {opacity: 1}
+  50% {
+    transform: rotatey(0deg);
+  }
+  94% {
+    transform: rotatey(0deg);
+  }
+  99% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+}
+@keyframes card3BackFlip {
+  2% {
+    opacity: 0;
+    transform: rotatey(-180deg);
+  }
+  49% {
+    transform: rotatey(-180deg);
+  }
+  49.8% {
+    opacity: 0
+  }
+  49.9% {opacity: 1}
+  51% {
+    transform: rotatey(0deg);
+  }
+  95% {
+    transform: rotatey(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+}
+
+@keyframes allCardsFlipFrontForwards {
+  0% {
+    opacity: 0;
+    transform: rotatey(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+}
+
+@keyframes allCardsFlipBackForwards {
+  0% {
+    opacity:1;
+    transform: rotatey(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotatey(180deg);
+  }
+}
+
+@keyframes allCardsFlipFrontBackwards {
+  0% {
+    opacity: 0;
+    transform: rotatey(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+}
+
+@keyframes allCardsFlipBackBackwards {
+  0% {
+    opacity: 1;
+    transform: rotatey(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotatey(-180deg);
+  }
+}
+
+@keyframes allCardsPositionUp {
+  0% {
+    top: 150rem;
+  }
+  100% {
+    top: 0rem;
+  }
+}
+
+@keyframes allCardsPositionDown {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: 150rem;
+  }
+}

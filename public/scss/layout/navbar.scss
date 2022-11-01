@@ -1,0 +1,198 @@
+.navbar {
+    @include flexbox(row, space-between, flex-start);
+    width: 100%;
+    height: 8rem;
+
+    .logo {
+        @include flexbox(column, center, center);
+        height: 8rem;
+        padding-left: 2rem;
+        padding-top: 2rem;
+        font-family: "PT Sans Narrow", sans-serif;
+        font-size: 3rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: $color-black;
+        
+        &:hover {
+            border: none;
+            animation: logoBounce 0.2s forwards;
+        }
+
+        sup {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        @include respond(tablet-portrait) {
+            padding-top: 0rem;
+        }
+    }
+    
+    .navbarFull {
+        @include flexbox(row, flex-end, center);
+        height: 8rem;
+
+        ul, li {
+            margin-right: 2rem
+        }
+
+        .courseList {
+            @include flexbox(row, center, center);
+            border-right: 0.4rem solid $color-inactive;
+            list-style-type: none;
+
+        }
+
+        .hashtagList {
+            @include flexbox(row, flex-start, center);
+            list-style-type: none;
+            display: none;
+        }
+
+        .navSpacer {
+            height: 0.7rem;
+            width: 0.7rem;
+            background-color: $color-inactive;
+            border-radius: 50%;
+        }
+
+        .hashtag, .course {
+            position: relative;
+            padding: 0.2rem 0rem;
+            display: block;
+            font-family: "PT Sans Narrow", sans-serif;
+            font-size: 2.3rem;
+            color: $color-inactive;
+            border: none;
+            background-color: $color-white;
+            text-decoration: none;
+            transition: 0.5s;
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 0.4rem;
+                background: $background-mid;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.5s;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+    }
+
+    .navbarMini {
+        @include flexbox(row, center, center);
+        height: 8rem;
+        width: 10rem;
+        margin-right: 2rem;
+        
+
+        #navbarMiniContainer {
+            @include flexbox(column, center, center);
+            @include border-gradient($background-mid, $background-dark);
+            border-radius: 50%;
+            height: 6rem;
+            width: 6rem;
+        }
+        
+        .navbarDash {
+            background-color: rgb(138, 138, 138);
+            height: 0.2rem;
+            border-radius: 20%;
+            width: 4rem;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    #navLinksBackdrop {
+        height: 100vh;
+        background-color: white;
+        width: 100vw;
+        @include flexbox(column, center, center);
+        display: none;
+        opacity: 0;
+        z-index: 10;
+        position: absolute;
+    }
+
+    #navLinksContainer {
+        font-family: "PT Sans Narrow", sans-serif;
+        font-size: 3rem;
+
+        ul {
+            list-style: none;
+            margin-bottom: 3em;
+            width: 20rem;
+            text-align: center;
+
+            span {
+                border-bottom: 0.4rem solid $background-mid;
+                
+            }
+            li {
+                margin-top: 1rem;
+                text-align: center;
+                width: 20rem;
+                .link {
+                    text-decoration: none;
+                    color: $color-inactive;
+                    &:hover {
+                        color: $background-dark
+                    }
+                    &:active {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond(tablet-portrait) {
+    .navbarFull {
+        display: none !important;
+    }
+}
+
+@media (min-width: 62.5em) {
+    .navbarMini {
+        display: none !important;
+    }
+}
+
+@keyframes openNavMenu {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes closeNavMenu {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes logoBounce {
+    from {
+        transform: scale(1)
+    }
+    to {
+        transform: scale(1.1)
+    }
+}

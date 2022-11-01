@@ -1,0 +1,39 @@
+@mixin flexbox($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone-portrait-small {
+        @media (max-width: 23.75em) {@content}; // 380px
+    }
+    @if $breakpoint == phone-portrait-large {
+        @media (max-width: 30.625em) {@content}; //490px
+    }
+    @if $breakpoint == tablet-portrait {
+        @media (max-width: 62.5em) {@content}; //1000px
+    }
+    @if $breakpoint == tablet-landscape {
+        @media (max-width: 81.25em) {@content}; //1300px
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: 93.75em) {@content}; // 1500px
+    }
+}
+
+@mixin border-gradient($from, $to, $weight: 0) {
+    $mix-main: mix($from, $to);
+    $mix-sub-from: mix($mix-main, $from);
+    $mix-sub-to: mix($mix-main, $to);
+    
+    box-shadow: 0 1px 0 $weight rgba($mix-sub-to, .25),
+                0 -1px 0 $weight rgba($mix-sub-from, .25),
+                1px 0 0 $weight rgba($mix-sub-to, .25),
+                -1px 0 0 $weight  rgba($mix-sub-from, .25),
+                1px -1px 0 $weight rgba($mix-main, .5),
+                -1px 1px 0 $weight rgba($mix-main, .5),
+                1px 1px 0 $weight rgba($to, .75),
+                -1px -1px 0 $weight rgba($from, .75);
+}

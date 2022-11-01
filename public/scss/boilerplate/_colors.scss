@@ -1,0 +1,25 @@
+//general
+$color-primary: #493271;
+$color-inactive: gray; 
+$color-white: #fff;
+$color-black: #000;
+//$gold: #FFB900;
+//$purple: #493271;
+//$brightCoral: #FF6D92;
+$background-light: #F4D8CD;
+$background-dark: #1F2421;
+$background-mid: #49A078;
+$opacity: 90%;
+$color-background: linear-gradient(
+    to top right,
+    mix($background-dark, white, $opacity) 10%,
+    mix($background-mid, white, $opacity) 65%,
+    mix($background-light, white, $opacity) 100%);
+
+//cards
+$color-card: rgba(255,255,255, 0.25);
+$color-cardBorder: rgba(255,255,255, 0.75);
+$color-textbox: rgba(255,255,255, 0.65);
+$color-cardText: black;
+$color-imgBorder: rgba(255,255,255, 0.5);
+

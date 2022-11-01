@@ -1,14 +1,23 @@
+const loadingScreen = document.getElementById("loadingScreen");
+const mainDisplay = document.getElementById("mainDisplay");
 const cardRow = document.getElementsByClassName("cardRow");
+const allQuarters = document.getElementsByClassName("quarter");
 const allNavHashtags = document.getElementsByClassName("hashtag");
-const quarterOne = document.getElementById("quarterOne");
-const quarterTwo = document.getElementById("quarterTwo");
-const quarterThree = document.getElementById("quarterThree");
-const quarterOneList = document.getElementById("hashtagListQuarterOne");
-const quarterTwoList = document.getElementById("hashtagListQuarterTwo");
-const quarterThreeList = document.getElementById("hashtagListQuarterThree");
+const allCourses = document.getElementsByClassName("course");
+const biology = document.getElementById("biology");
+const forensics = document.getElementById("forensics");
+const biologyList = document.getElementById("biologyList");
+const forensicsList = document.getElementById("forensicsList");
+
 const toggleBackwards = document.getElementById("toggleBackwards");
 const toggleForwards = document.getElementById("toggleForwards");
+const togglePhoneBackwards = document.getElementById("togglePhoneBackwards");
+const togglePhoneForwards = document.getElementById("togglePhoneForwards");
 const playPauseControls = document.getElementById("playPauseBtn");
+
+const playPausePhoneControls = document.getElementById("togglePhonePlayPause");
+const playSymbol = document.getElementById("playSymbol");
+const pauseSymbol = document.getElementById("pauseSymbol");
 const fullScreenBtn = document.getElementById("fullScreenBtn");
 const fullScreenIcon = document.getElementById("fullScreenIcon");
 const compressScreenIcon = document.getElementById("compressScreenIcon");
@@ -37,15 +46,25 @@ for (hashtag of allNavHashtags) {
   }
 }
 
-if (document.URL.includes("q3")) {
-  quarterThree.style.color = "#000";
-  quarterThreeList.style.display = "flex";
-} else if (document.URL.includes("q2")) {
-  quarterTwo.style.color = "#000";
-  quarterTwoList.style.display = "flex";
-} else {
-  quarterOne.style.color = "#000";
-  quarterOneList.style.display = "flex";
+if (document.URL.includes("biology")) {
+  biology.style.color = "#000";
+  biologyList.style.display = "flex";
+} else if (document.URL.includes("forensics")) {
+  forensics.style.color = "#000";
+  forensicsList.style.display = "flex";
+}
+
+for (course of allCourses) {
+  course.addEventListener("click", () => {
+    loadingScreen.style.display = "flex";
+    mainDisplay.style.display = "none";
+  });
+}
+for (hashtag of allNavHashtags) {
+  hashtag.addEventListener("click", () => {
+    loadingScreen.style.display = "flex";
+    mainDisplay.style.display = "none";
+  });
 }
 
 const nextRowDelay = 40000;
@@ -136,6 +155,8 @@ function playPauseFunc() {
       card.style.animationPlayState = "paused";
     }
     playPauseControls.innerText = "Play";
+    pauseSymbol.style.display = "none";
+    playSymbol.style.display = "inline";
     cardsRotating = false;
     console.log("Animation Paused");
   } else {
@@ -186,6 +207,8 @@ function playPauseFunc() {
       card.style.animation = "card3BackFlip ease-in-out 40s infinite";
     }
     playPauseControls.innerText = "Pause";
+    pauseSymbol.style.display = "inline";
+    playSymbol.style.display = "none";
   }
 }
 
@@ -356,5 +379,8 @@ window.onload = playPauseFunc();
 
 toggleBackwards.addEventListener("click", rotatingRowsBackwards);
 toggleForwards.addEventListener("click", rotatingRowsForwards);
+togglePhoneBackwards.addEventListener("click", rotatingRowsBackwards);
+togglePhoneForwards.addEventListener("click", rotatingRowsForwards);
 playPauseControls.addEventListener("click", playPauseFunc);
+playPausePhoneControls.addEventListener("click", playPauseFunc);
 fullScreenBtn.addEventListener("click", toggleFullScreen);

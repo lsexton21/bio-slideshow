@@ -1,0 +1,59 @@
+//abstracts
+@import "./boilerplate/_mixins.scss";
+@import "./boilerplate/_colors.scss";
+
+//layout
+@import "./layout/main.scss";
+@import "./layout/navbar.scss";
+@import "./layout/footer.scss";
+@import "./boilerplate/loadingScreen.scss";
+
+//pages
+@import "./pages/instafeed.scss";
+@import "./pages/welcome.scss";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // defines 1rem, 1rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tablet-landscape) {
+        font-size: 50%;
+    }
+
+    @include respond(tablet-portrait) {
+        font-size: 50%;
+    }
+
+    @include respond(phone-portrait-large) {
+        font-size: 36%;
+    }
+
+    @include respond(phone-portrait-small) {
+        font-size: 28%;
+    }
+
+    @include respond(desktop) {
+        font-size: 62.5%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
