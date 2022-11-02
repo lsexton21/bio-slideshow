@@ -7,6 +7,24 @@
 
 @mixin respond($breakpoint) {
     @if $breakpoint == phone-portrait-small {
+        @media (max-width: 380px) {@content}; // 380px
+    }
+    @if $breakpoint == phone-portrait-large {
+        @media (max-width: 490px) {@content}; //490px
+    }
+    @if $breakpoint == tablet-portrait {
+        @media (max-width: 1000px) {@content}; //1000px
+    }
+    @if $breakpoint == tablet-landscape {
+        @media (max-width: 1300px) {@content}; //1300px
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: 1500px) {@content}; // 1500px
+    }
+}
+
+/*@mixin respond($breakpoint) {
+    @if $breakpoint == phone-portrait-small {
         @media (max-width: 23.75em) {@content}; // 380px
     }
     @if $breakpoint == phone-portrait-large {
@@ -22,7 +40,7 @@
         @media (min-width: 93.75em) {@content}; // 1500px
     }
 }
-
+*/
 @mixin border-gradient($from, $to, $weight: 0) {
     $mix-main: mix($from, $to);
     $mix-sub-from: mix($mix-main, $from);
