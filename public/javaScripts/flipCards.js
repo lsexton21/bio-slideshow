@@ -163,47 +163,38 @@ function playPauseFunc() {
     runRotatingCards();
     for (let card of card1) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "cardPlacement1 ease-in-out 40s infinite";
     }
     for (let card of card2) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "cardPlacement2 ease-in-out 40s infinite";
     }
     for (let card of card3) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "cardPlacement3 ease-in-out 40s infinite";
     }
     for (let card of card1Front) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "card1FrontFlip ease-in-out 40s infinite";
     }
     for (let card of card2Front) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "card2FrontFlip ease-in-out 40s infinite";
     }
     for (let card of card3Front) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "card3FrontFlip ease-in-out 40s infinite";
     }
     for (let card of card1Back) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "card1BackFlip ease-in-out 40s infinite";
     }
     for (let card of card2Back) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "card2BackFlip ease-in-out 40s infinite";
     }
     for (let card of card3Back) {
       card.style.animation = "none";
-      card.offsetWidth;
       card.style.animation = "card3BackFlip ease-in-out 40s infinite";
     }
     playPauseControls.innerText = "Pause";
