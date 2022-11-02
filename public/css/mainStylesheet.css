@@ -1504,31 +1504,31 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 10px;
 }
 @media (max-width: 1300px) {
   html {
-    font-size: 50%;
+    font-size: 8px;
   }
 }
 @media (max-width: 1000px) {
   html {
-    font-size: 50%;
+    font-size: 8px;
   }
 }
 @media (max-width: 490px) {
   html {
-    font-size: 36%;
+    font-size: 5.76px;
   }
 }
 @media (max-width: 380px) {
   html {
-    font-size: 28%;
+    font-size: 4.48px;
   }
 }
 @media (min-width: 1500px) {
   html {
-    font-size: 62.5%;
+    font-size: 10px;
   }
 }
 

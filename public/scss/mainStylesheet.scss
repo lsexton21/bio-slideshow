@@ -19,26 +19,26 @@
 }
 
 html {
-    font-size: 62.5%; // defines 1rem, 1rem = 10px; 10px/16px = 62.5%
+    font-size: 10px; // defines 1rem, 1rem = 10px; 10px/16px = 62.5%
 
     @include respond(tablet-landscape) {
-        font-size: 50%;
+        font-size: 8px;
     }
 
     @include respond(tablet-portrait) {
-        font-size: 50%;
+        font-size: 8px;
     }
 
     @include respond(phone-portrait-large) {
-        font-size: 36%;
+        font-size: 5.76px;
     }
 
     @include respond(phone-portrait-small) {
-        font-size: 28%;
+        font-size: 4.48px;
     }
 
     @include respond(desktop) {
-        font-size: 62.5%;
+        font-size: 10px;
     }
 }
 
