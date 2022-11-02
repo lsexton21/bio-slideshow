@@ -1,5 +1,4 @@
 const navButton = document.getElementById("navbarMiniContainer");
-const pixelWidth = document.getElementById("pixelWidth");
 const navLinksBackdrop = document.getElementById("navLinksBackdrop");
 
 const openNavLinks = () => {
@@ -14,11 +13,5 @@ const closeNavLinks = () => {
   }, 300);
 };
 
-const pixelWidthFunc = () => {
-  console.log(window.innerWidth);
-};
-
 navButton.addEventListener("click", openNavLinks);
 navLinksBackdrop.addEventListener("click", closeNavLinks);
-
-pixelWidth.addEventListener("click", pixelWidthFunc);

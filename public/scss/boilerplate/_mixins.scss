@@ -13,7 +13,7 @@
         @media only screen and (max-width: 490px) {@content}; 
     }
     @if $breakpoint == tablet-portrait {
-        @media only screen and (max-width: 1000px) {@content}; 
+        @media only screen and (max-width: 1000px) and (min-width: 491px) {@content}; 
     }
     @if $breakpoint == tablet-landscape {
         @media only screen and (max-width: 1300px) {@content}; 

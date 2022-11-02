@@ -17,6 +17,10 @@
         min-height: 132rem;
         margin-top: 0rem;
       }
+      @include respond(phone-portrait-large) {
+        min-height: 132rem;
+        margin-top: 0rem;
+      }
     }
 
     @include respond(tablet-portrait) {
@@ -26,6 +30,7 @@
     }
 
     @include respond(phone-portrait-large) {
+      min-height: 138rem;
       border-radius: 5rem 0 0 0;
     }
   }
