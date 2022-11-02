@@ -19,13 +19,13 @@
   height: calc(100vh - 16rem);
   min-height: 75rem;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .main .controlsAndCards {
     min-height: 132rem;
     margin-top: 0rem;
   }
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .main {
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
     border-radius: 10rem 0 0 0;
   }
 }
-@media (max-width: 30.625em) {
+@media only screen and (max-width: 490px) {
   .main {
     border-radius: 5rem 0 0 0;
   }
@@ -71,7 +71,7 @@
   font-size: 2rem;
   font-weight: 300;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .navbar .logo {
     padding-top: 0rem;
   }
@@ -205,7 +205,7 @@
   color: #fff;
 }
 
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .navbarFull {
     display: none !important;
   }
@@ -247,7 +247,7 @@
   height: 8rem;
   width: 100%;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .footer {
     display: none;
   }
@@ -364,7 +364,7 @@
   width: 104rem;
   display: none;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .cardRow {
     display: flex;
     flex-direction: column;
@@ -380,7 +380,7 @@
   width: 33rem;
   position: relative;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card {
     height: 41rem;
     width: 86rem;
@@ -396,7 +396,7 @@
   align-items: center;
   backface-visibility: hidden;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .cardSide {
     display: flex;
     flex-direction: row;
@@ -411,7 +411,7 @@
   opacity: 0;
   transform: rotatey(-180deg);
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .cardSideBack {
     bottom: 41rem;
   }
@@ -429,7 +429,7 @@
   color: black;
   font-family: "PT Sans Narrow", sans-serif;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .textbox {
     display: flex;
     flex-direction: column;
@@ -448,7 +448,7 @@
   height: 19rem;
   width: 31rem;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .textbox .dateAndCaption {
     height: 19rem;
     width: 32rem;
@@ -467,7 +467,7 @@
   font-size: 2.3rem;
   font-weight: 300;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .textbox .dateAndCaption .date {
     margin-right: 1rem;
     width: 100%;
@@ -489,7 +489,7 @@
   overflow: hidden;
   border-radius: 0.5rem;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .textbox .dateAndCaption .caption {
     width: 32rem;
     height: 13rem;
@@ -508,7 +508,7 @@
   border-radius: 0.5rem;
   font-weight: 300;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .textbox .profiles {
     display: flex;
     flex-direction: column;
@@ -533,7 +533,7 @@
   align-items: center;
   height: 18rem;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .textbox .profiles .profileList {
     display: flex;
     flex-direction: row;
@@ -612,7 +612,7 @@
   justify-content: space-around;
   align-items: flex-start;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .textbox .profiles .profileList .profile {
     display: flex;
     flex-direction: column;
@@ -652,7 +652,7 @@
   box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.8rem rgba(255, 255, 255, 0.5);
   border-radius: 10%;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .card .img {
     top: 0rem;
     left: 1rem;
@@ -661,41 +661,6 @@
   }
 }
 
-/*.card1 {
-  animation: cardPlacement1 ease-in-out 40s infinite;
-}
-
-.card2 {
-  animation: cardPlacement2 ease-in-out 40s infinite;
-}
-
-.card3 {
-  animation: cardPlacement3 ease-in-out 40s infinite;
-}
-
-.card1Front {
-  animation: card1FrontFlip ease-in-out 40s infinite;
-}
-
-.card2Front {
-  animation: card2FrontFlip ease-in-out 40s infinite;
-}
-
-.card3Front {
-  animation: card3FrontFlip ease-in-out 40s infinite;
-}
-
-.card1Back {
-  animation: card1BackFlip ease-in-out 40s infinite;
-}
-
-.card2Back {
-  animation: card2BackFlip ease-in-out 40s infinite;
-}
-
-.card3Back {
-  animation: card3BackFlip ease-in-out 40s infinite;
-}*/
 .toggleControls {
   display: flex;
   flex-direction: column;
@@ -708,7 +673,7 @@
   margin-left: 2rem;
   margin-right: 2rem;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .toggleControls {
     display: none;
   }
@@ -806,7 +771,7 @@
 .toggleControlsPhone #togglePhonePlayPause #pauseSymbol {
   font-size: 4rem;
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   .toggleControlsPhone {
     display: flex !important;
   }
@@ -1084,7 +1049,7 @@
   border-radius: 0.5rem;
   margin-left: 9rem;
 }
-@media (max-width: 30.625em) {
+@media only screen and (max-width: 490px) {
   #phrase_box {
     height: 30rem;
     width: 40rem;
@@ -1094,12 +1059,12 @@
 #phrases {
   animation: slide-phrases-upward 30s;
 }
-@media (max-width: 81.25em) {
+@media only screen and (max-width: 1300px) {
   #phrases {
     animation: slide-phrases-upward 22s;
   }
 }
-@media (max-width: 30.625em) {
+@media only screen and (max-width: 490px) {
   #phrases {
     animation: slide-phrases-upward 16s;
   }
@@ -1492,27 +1457,27 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 81.25em) {
+@media only screen and (max-width: 1300px) {
   html {
     font-size: 50%;
   }
 }
-@media (max-width: 62.5em) {
+@media only screen and (max-width: 1000px) {
   html {
     font-size: 50%;
   }
 }
-@media (max-width: 30.625em) {
+@media only screen and (max-width: 490px) {
   html {
     font-size: 36%;
   }
 }
-@media (max-width: 23.75em) {
+@media only screen and (max-width: 380px) {
   html {
     font-size: 28%;
   }
 }
-@media (min-width: 81.25em) {
+@media only screen and (min-width: 1500px) {
   html {
     font-size: 62.5%;
   }

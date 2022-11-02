@@ -259,42 +259,6 @@
   }
 }
 
-/*.card1 {
-  animation: cardPlacement1 ease-in-out 40s infinite;
-}
-
-.card2 {
-  animation: cardPlacement2 ease-in-out 40s infinite;
-}
-
-.card3 {
-  animation: cardPlacement3 ease-in-out 40s infinite;
-}
-
-.card1Front {
-  animation: card1FrontFlip ease-in-out 40s infinite;
-}
-
-.card2Front {
-  animation: card2FrontFlip ease-in-out 40s infinite;
-}
-
-.card3Front {
-  animation: card3FrontFlip ease-in-out 40s infinite;
-}
-
-.card1Back {
-  animation: card1BackFlip ease-in-out 40s infinite;
-}
-
-.card2Back {
-  animation: card2BackFlip ease-in-out 40s infinite;
-}
-
-.card3Back {
-  animation: card3BackFlip ease-in-out 40s infinite;
-}*/
-
 .toggleControls {
     @include flexbox(column, space-around, center);
     font-weight: bold;
