@@ -620,6 +620,11 @@
   text-align: left;
   overflow-wrap: break-word;
 }
+@media (max-width: 490px) {
+  .card .textbox .profiles .profileList .projectProfile .projectNameContainer .projectNames {
+    font-size: 1rem;
+  }
+}
 .card .textbox .profiles .profileList .profile {
   display: flex;
   flex-direction: column;
