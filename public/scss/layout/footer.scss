@@ -7,10 +7,6 @@
         display: none;
     }
 
-    @include respond(phone-portrait-large) {
-        display: none;
-    }
-
     .footerText {
         @include flexbox(row, space-evenly, center);
         height: 5rem;

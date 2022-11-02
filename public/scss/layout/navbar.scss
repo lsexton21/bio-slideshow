@@ -27,10 +27,6 @@
         @include respond(tablet-portrait) {
             padding-top: 0rem;
         }
-
-        @include respond(phone-portrait-large) {
-            padding-top: 0rem;
-        }
     }
     
     .navbarFull {
@@ -163,12 +159,6 @@
 }
 
 @include respond(tablet-portrait) {
-    .navbarFull {
-        display: none !important;
-    }
-}
-
-@include respond(phone-portrait-large) {
     .navbarFull {
         display: none !important;
     }
