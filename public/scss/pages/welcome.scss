@@ -30,10 +30,23 @@
   width: 30rem;
   border-radius: 0.5rem;
   margin-left: 9rem;
+
+  @include respond(phone-portrait-large) {
+    height: 30rem;
+    width: 40rem;
+  }
 }
 
 #phrases {
   animation: slide-phrases-upward 30s;
+
+  @include respond(tablet-landscape) {
+    animation: slide-phrases-upward 22s;
+  }
+
+  @include respond(phone-portrait-large) {
+    animation: slide-phrases-upward 16s;
+  }
 }
 
 @keyframes slide-phrases-upward {

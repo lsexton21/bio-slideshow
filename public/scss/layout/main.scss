@@ -14,13 +14,14 @@
       min-height: 75rem;
 
       @include respond(tablet-portrait) {
-        min-height: 0rem;
+        min-height: 132rem;
         margin-top: 0rem;
       }
     }
 
     @include respond(tablet-portrait) {
       @include flexbox(column, space-between, center);
+      min-height: 138rem;
       border-radius: 10rem 0 0 0;
     }
 

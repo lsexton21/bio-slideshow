@@ -1,21 +1,3 @@
-/*@mixin respond($breakpoint) {
-    @if $breakpoint == phone-portrait-small {
-        @media (max-width: 23.75em) {@content}; // 380px
-    }
-    @if $breakpoint == phone-portrait-large {
-        @media (max-width: 30.625em) {@content}; //490px
-    }
-    @if $breakpoint == tablet-portrait {
-        @media (max-width: 62.5em) {@content}; //1000px
-    }
-    @if $breakpoint == tablet-landscape {
-        @media (max-width: 81.25em) {@content}; //1300px
-    }
-    @if $breakpoint == desktop {
-        @media (min-width: 93.75em) {@content}; // 1500px
-    }
-}
-*/
 .main {
   display: flex;
   flex-direction: column;
@@ -37,22 +19,23 @@
   height: calc(100vh - 16rem);
   min-height: 75rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .main .controlsAndCards {
-    min-height: 0rem;
+    min-height: 132rem;
     margin-top: 0rem;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    min-height: 138rem;
     border-radius: 10rem 0 0 0;
   }
 }
-@media (max-width: 490px) {
+@media (max-width: 30.625em) {
   .main {
     border-radius: 5rem 0 0 0;
   }
@@ -88,7 +71,7 @@
   font-size: 2rem;
   font-weight: 300;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .navbar .logo {
     padding-top: 0rem;
   }
@@ -222,7 +205,7 @@
   color: #fff;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .navbarFull {
     display: none !important;
   }
@@ -264,7 +247,7 @@
   height: 8rem;
   width: 100%;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .footer {
     display: none;
   }
@@ -381,7 +364,7 @@
   width: 104rem;
   display: none;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .cardRow {
     display: flex;
     flex-direction: column;
@@ -397,7 +380,7 @@
   width: 33rem;
   position: relative;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card {
     height: 41rem;
     width: 86rem;
@@ -413,7 +396,7 @@
   align-items: center;
   backface-visibility: hidden;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .cardSide {
     display: flex;
     flex-direction: row;
@@ -426,7 +409,7 @@
   bottom: 75rem;
   backface-visibility: hidden;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .cardSideBack {
     bottom: 41rem;
   }
@@ -444,7 +427,7 @@
   color: black;
   font-family: "PT Sans Narrow", sans-serif;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .textbox {
     display: flex;
     flex-direction: column;
@@ -463,7 +446,7 @@
   height: 19rem;
   width: 31rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .textbox .dateAndCaption {
     height: 19rem;
     width: 32rem;
@@ -482,7 +465,7 @@
   font-size: 2.3rem;
   font-weight: 300;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .textbox .dateAndCaption .date {
     margin-right: 1rem;
     width: 100%;
@@ -496,7 +479,7 @@
   box-shadow: inset 0.1rem 0.1rem 0.2rem black;
   background-color: rgba(255, 255, 255, 0.65);
   font-family: "PT Sans Narrow", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 100;
   padding: 1rem;
   padding-top: 0.5rem;
@@ -504,7 +487,7 @@
   overflow: hidden;
   border-radius: 0.5rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .textbox .dateAndCaption .caption {
     width: 32rem;
     height: 13rem;
@@ -523,7 +506,7 @@
   border-radius: 0.5rem;
   font-weight: 300;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .textbox .profiles {
     display: flex;
     flex-direction: column;
@@ -548,7 +531,7 @@
   align-items: center;
   height: 18rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .textbox .profiles .profileList {
     display: flex;
     flex-direction: row;
@@ -619,11 +602,7 @@
   margin-left: 0.5rem;
   text-align: left;
   overflow-wrap: break-word;
-}
-@media (max-width: 490px) {
-  .card .textbox .profiles .profileList .projectProfile .projectNameContainer .projectNames {
-    font-size: 1rem;
-  }
+  font-weight: 300;
 }
 .card .textbox .profiles .profileList .profile {
   display: flex;
@@ -631,7 +610,7 @@
   justify-content: space-around;
   align-items: flex-start;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .textbox .profiles .profileList .profile {
     display: flex;
     flex-direction: column;
@@ -659,7 +638,7 @@
   text-align: center;
   width: 100%;
   height: 5rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-top: 1rem;
 }
 .card .img {
@@ -671,7 +650,7 @@
   box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.8rem rgba(255, 255, 255, 0.5);
   border-radius: 10%;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .card .img {
     top: 0rem;
     left: 1rem;
@@ -728,7 +707,7 @@
   margin-left: 2rem;
   margin-right: 2rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .toggleControls {
     display: none;
   }
@@ -826,7 +805,7 @@
 .toggleControlsPhone #togglePhonePlayPause #pauseSymbol {
   font-size: 4rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .toggleControlsPhone {
     display: flex !important;
   }
@@ -1116,9 +1095,25 @@
   border-radius: 0.5rem;
   margin-left: 9rem;
 }
+@media (max-width: 30.625em) {
+  #phrase_box {
+    height: 30rem;
+    width: 40rem;
+  }
+}
 
 #phrases {
   animation: slide-phrases-upward 30s;
+}
+@media (max-width: 81.25em) {
+  #phrases {
+    animation: slide-phrases-upward 22s;
+  }
+}
+@media (max-width: 30.625em) {
+  #phrases {
+    animation: slide-phrases-upward 16s;
+  }
 }
 
 @keyframes slide-phrases-upward {
@@ -1508,32 +1503,29 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 10px;
-}
-@media (max-width: 1300px) {
+@media (max-width: 81.25em) {
   html {
-    font-size: 8px;
+    font-size: 50%;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   html {
-    font-size: 8px;
+    font-size: 50%;
   }
 }
-@media (max-width: 490px) {
+@media (max-width: 30.625em) {
   html {
-    font-size: 5.76px;
+    font-size: 36%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 23.75em) {
   html {
-    font-size: 4.48px;
+    font-size: 28%;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 81.25em) {
   html {
-    font-size: 10px;
+    font-size: 62.5%;
   }
 }
 

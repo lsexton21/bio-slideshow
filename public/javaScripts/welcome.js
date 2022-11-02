@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     "Plant Cross Sections",
     "Plankton Tow",
     "Moss Ecology",
-    "Vitamin C Crystallization",
+    "Vitamin C Crystals",
     "Human Anatomy",
     "Entomology",
     "Forensics",
