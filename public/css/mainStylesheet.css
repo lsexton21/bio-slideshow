@@ -1457,6 +1457,9 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
 @media only screen and (max-width: 1300px) {
   html {
     font-size: 50%;

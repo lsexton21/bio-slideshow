@@ -19,25 +19,12 @@
 }
 
 html {
-    @include respond(tablet-landscape) {
-        font-size: 50%;
-    }
-
-    @include respond(tablet-portrait) {
-        font-size: 50%;
-    }
-
-    @include respond(phone-portrait-large) {
-        font-size: 36%;
-    }
-
-    @include respond(phone-portrait-small) {
-        font-size: 28%;
-    }
-
-    @include respond(desktop) {
-        font-size: 62.5%;  //defines 1rem as 10px; 10px/16px = 62.5%
-    }
+    font-size: 62.5%;
+    @media only screen and (max-width: 1300px) {font-size: 50%;}
+    @media only screen and (max-width: 1000px) {font-size: 50%;}
+    @media only screen and (max-width: 490px) {font-size: 36%;}
+    @media only screen and (max-width: 380px) {font-size: 28%;}
+    @media only screen and (min-width: 1500px) {font-size: 62.5%;}
 }
 
 
