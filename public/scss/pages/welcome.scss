@@ -44,7 +44,7 @@
     animation: slide-phrases-upward 22s;
   }
 
-  @include respond(phone-portrait-large) {
+  @media only screen and (max-width: 490px) {
     animation: slide-phrases-upward 16s;
   }
 }
