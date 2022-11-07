@@ -20,11 +20,11 @@
 
 html {
     font-size: 62.5%;
-    @media only screen and (max-width: 1300px) {font-size: 50%;}
-    @media only screen and (max-width: 1000px) {font-size: 50%;}
-    @media only screen and (max-width: 490px) {font-size: 36%;}
-    @media only screen and (max-width: 380px) {font-size: 28%;}
-    @media only screen and (min-width: 1500px) {font-size: 62.5%;}
+    @media (max-width: 1300px) {font-size: 50%;} //tablet landscape
+    @media (max-width: 1000px) {font-size: 50%;} //tablet portrait
+    @media (max-width: 490px) {font-size: 36%;} //phone portrait large
+    @media (max-width: 380px) {font-size: 28%;} //phone portrait small
+    @media (min-width: 1500px) {font-size: 62.5%;} // desktop
 }
 
 

@@ -1460,27 +1460,27 @@
 html {
   font-size: 62.5%;
 }
-@media only screen and (max-width: 1300px) {
+@media (max-width: 1300px) {
   html {
     font-size: 50%;
   }
 }
-@media only screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
   html {
     font-size: 50%;
   }
 }
-@media only screen and (max-width: 490px) {
+@media (max-width: 490px) {
   html {
     font-size: 36%;
   }
 }
-@media only screen and (max-width: 380px) {
+@media (max-width: 380px) {
   html {
     font-size: 28%;
   }
 }
-@media only screen and (min-width: 1500px) {
+@media (min-width: 1500px) {
   html {
     font-size: 62.5%;
   }
