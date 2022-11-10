@@ -14,6 +14,7 @@
   height: 75rem;
   width: 33rem;
   position: relative;
+  top: 100vh;
 
   @include respond(tablet-portrait) {
     height: 41rem;
@@ -380,58 +381,58 @@
 
 @keyframes cardPlacement1 {
   0% {
-    top: 150rem;
+    top: 0vh;
   }
   2.5% {
-    top: 0rem;
+    top: 100vh;
   }
   95.5% {
-    top: 0rem;
+    top: 100vh;
   }
   98% {
-    top: 150rem;
+    top: 0vh;
   }
   100% {
-    top: 150rem;
+    top: 0vh;
   }
 }
 
 @keyframes cardPlacement2 {
   0% {
-    top: 150rem;
+    top: 0vh;
   }
   1% {
-    top: 150rem;
+    top: 0vh;
   }
   3.5% {
-    top: 0rem;
+    top: 100vh;
   }
   96.5% {
-    top: 0rem;
+    top: 100vh;
   }
   99% {
-    top: 150rem;
+    top: 0vh;
   }
   100% {
-    top: 150rem;
+    top: 0vh;
   }
 }
 
 @keyframes cardPlacement3 {
   0% {
-    top: 150rem;
+    top: 0vh;
   }
   2% {
-    top: 150rem;
+    top: 0vh;
   }
   4.5% {
-    top: 0rem;
+    top: 100vh;
   }
   97.5% {
-    top: 0rem;
+    top: 100vh;
   }
   100% {
-    top: 150rem;
+    top: 0vh;
   }
 }
 
@@ -607,18 +608,22 @@
 
 @keyframes allCardsPositionUp {
   0% {
-    top: 150rem;
+    opacity: 0;
+    top: 100vh;
   }
   100% {
-    top: 0rem;
+    opacity: 1;
+    top: 0vh;
   }
 }
 
 @keyframes allCardsPositionDown {
   0% {
-    top: 0rem;
+    opacity: 1;
+    top: 0vh;
   }
   100% {
-    top: 150rem;
+    opacity: 0;
+    top: 100vh;
   }
 }

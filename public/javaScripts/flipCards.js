@@ -77,6 +77,9 @@ let cardsFlippedIntervalID = 0;
 let intervalHandler = 1;
 let cardsRotating = false;
 let cardsFlipped = false;
+let cardsActive = false;
+let flipForwardTimer;
+let flipBackwardTimer;
 
 function cardsFlippedFunc() {
   if (cardsFlipped === false) {
@@ -105,108 +108,116 @@ function runRotatingCards() {
   intervalID = setInterval(rotatingRows, nextRowDelay);
 }
 
-function playPauseFunc() {
-  if (cardsRotating === true) {
-    clearInterval(intervalID);
-    clearInterval(cardsFlippedIntervalID);
-    for (let img of imgCard1Front) {
-      img.style.animationPlayState = "paused";
-    }
-    for (let img of imgCard2Front) {
-      img.style.animationPlayState = "paused";
-    }
-    for (let img of imgCard3Front) {
-      img.style.animationPlayState = "paused";
-    }
-    for (let img of imgCard1Back) {
-      img.style.animationPlayState = "paused";
-    }
-    for (let img of imgCard2Back) {
-      img.style.animationPlayState = "paused";
-    }
-    for (let img of imgCard3Back) {
-      img.style.animationPlayState = "paused";
-    }
-    for (let card of card1) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card2) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card3) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card1Front) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card2Front) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card3Front) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card1Back) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card2Back) {
-      card.style.animationPlayState = "paused";
-    }
-    for (let card of card3Back) {
-      card.style.animationPlayState = "paused";
-    }
-    playPauseControls.innerText = "Play";
-    pauseSymbol.style.display = "none";
-    playSymbol.style.display = "inline";
-    cardsRotating = false;
-    console.log("Animation Paused");
-  } else {
-    runRotatingCards();
-    for (let card of card1) {
-      card.style.animation = "none";
-      card.style.animation = "cardPlacement1 ease-in-out 40s infinite";
-    }
-    for (let card of card2) {
-      card.style.animation = "none";
-      card.style.animation = "cardPlacement2 ease-in-out 40s infinite";
-    }
-    for (let card of card3) {
-      card.style.animation = "none";
-      card.style.animation = "cardPlacement3 ease-in-out 40s infinite";
-    }
-    for (let card of card1Front) {
-      card.style.animation = "none";
-      card.style.animation = "card1FrontFlip ease-in-out 40s infinite";
-    }
-    for (let card of card2Front) {
-      card.style.animation = "none";
-      card.style.animation = "card2FrontFlip ease-in-out 40s infinite";
-    }
-    for (let card of card3Front) {
-      card.style.animation = "none";
-      card.style.animation = "card3FrontFlip ease-in-out 40s infinite";
-    }
-    for (let card of card1Back) {
-      card.style.animation = "none";
-      card.style.animation = "card1BackFlip ease-in-out 40s infinite";
-    }
-    for (let card of card2Back) {
-      card.style.animation = "none";
-      card.style.animation = "card2BackFlip ease-in-out 40s infinite";
-    }
-    for (let card of card3Back) {
-      card.style.animation = "none";
-      card.style.animation = "card3BackFlip ease-in-out 40s infinite";
-    }
-    playPauseControls.innerText = "Pause";
-    pauseSymbol.style.display = "inline";
-    playSymbol.style.display = "none";
+function pauseFunc() {
+  clearInterval(intervalID);
+  clearInterval(cardsFlippedIntervalID);
+  for (let img of imgCard1Front) {
+    img.style.animationPlayState = "paused";
   }
+  for (let img of imgCard2Front) {
+    img.style.animationPlayState = "paused";
+  }
+  for (let img of imgCard3Front) {
+    img.style.animationPlayState = "paused";
+  }
+  for (let img of imgCard1Back) {
+    img.style.animationPlayState = "paused";
+  }
+  for (let img of imgCard2Back) {
+    img.style.animationPlayState = "paused";
+  }
+  for (let img of imgCard3Back) {
+    img.style.animationPlayState = "paused";
+  }
+  for (let card of card1) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card2) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card3) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card1Front) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card2Front) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card3Front) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card1Back) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card2Back) {
+    card.style.animationPlayState = "paused";
+  }
+  for (let card of card3Back) {
+    card.style.animationPlayState = "paused";
+  }
+  playPauseControls.innerText = "Play";
+  pauseSymbol.style.display = "none";
+  playSymbol.style.display = "inline";
+  cardsRotating = false;
+  console.log("Animation Paused");
 }
 
+const playFunc = () => {
+  runRotatingCards();
+  for (let card of card1) {
+    card.style.animation = "none";
+    card.style.animation = "cardPlacement1 ease-in-out 40s infinite";
+  }
+  for (let card of card2) {
+    card.style.animation = "none";
+    card.style.animation = "cardPlacement2 ease-in-out 40s infinite";
+  }
+  for (let card of card3) {
+    card.style.animation = "none";
+    card.style.animation = "cardPlacement3 ease-in-out 40s infinite";
+  }
+  for (let card of card1Front) {
+    card.style.animation = "none";
+    card.style.animation = "card1FrontFlip ease-in-out 40s infinite";
+  }
+  for (let card of card2Front) {
+    card.style.animation = "none";
+    card.style.animation = "card2FrontFlip ease-in-out 40s infinite";
+  }
+  for (let card of card3Front) {
+    card.style.animation = "none";
+    card.style.animation = "card3FrontFlip ease-in-out 40s infinite";
+  }
+  for (let card of card1Back) {
+    card.style.animation = "none";
+    card.style.animation = "card1BackFlip ease-in-out 40s infinite";
+  }
+  for (let card of card2Back) {
+    card.style.animation = "none";
+    card.style.animation = "card2BackFlip ease-in-out 40s infinite";
+  }
+  for (let card of card3Back) {
+    card.style.animation = "none";
+    card.style.animation = "card3BackFlip ease-in-out 40s infinite";
+  }
+  playPauseControls.innerText = "Pause";
+  pauseSymbol.style.display = "inline";
+  playSymbol.style.display = "none";
+  console.log("Animation Started");
+};
+
+const playPauseFunc = () => {
+  if (cardsRotating) {
+    pauseFunc();
+  } else {
+    playFunc();
+  }
+};
+
 function rotatingRowsForwards() {
-  cardsRotating = true;
-  playPauseFunc();
-  if (cardsFlipped === false) {
+  pauseFunc();
+  if (cardsFlipped === false && cardsActive === false) {
     for (let card of card1Front) {
       card.style.animation =
         "allCardsFlipBackForwards ease-in-out 0.5s forwards";
@@ -232,21 +243,40 @@ function rotatingRowsForwards() {
         "allCardsFlipFrontForwards ease-in-out 0.5s forwards";
     }
     cardsFlipped = true;
-    console.log(`Current Row Number: ${currentRowCounter}`);
-  } else {
+    console.log(`Current Row Number: ${currentRowCounter} -- Cards Flipped`);
+  } else if (cardsFlipped === true && cardsActive === false) {
+    cardsActive = true;
     for (let card of card1) {
-      card.style.animation = "allCardsPositionDown ease-in-out 0.5s";
+      card.style.animation = "allCardsPositionDown 0.5s";
     }
     for (let card of card2) {
-      card.style.animation = "allCardsPositionDown ease-in-out 0.5s";
+      card.style.animation = "allCardsPositionDown 0.5s";
     }
     for (let card of card3) {
-      card.style.animation = "allCardsPositionDown ease-in-out 0.5s";
+      card.style.animation = "allCardsPositionDown 0.5s";
     }
-    setTimeout(() => {
+    flipForwardTimer = setTimeout(() => {
       cardRow[currentRowCounter].style.display = "none";
       currentRowCounter = (currentRowCounter + 1) % cardRow.length;
       cardRow[currentRowCounter].style.display = "flex";
+      for (let card of card1Front) {
+        card.style.animation = "allCardsFlipFrontForwards forwards";
+      }
+      for (let card of card1Back) {
+        card.style.animation = "allCardsFlipBackForwards forwards";
+      }
+      for (let card of card2Front) {
+        card.style.animation = "allCardsFlipFrontForwards forwards";
+      }
+      for (let card of card2Back) {
+        card.style.animation = "allCardsFlipBackForwards forwards";
+      }
+      for (let card of card3Front) {
+        card.style.animation = "allCardsFlipFrontForwards forwards";
+      }
+      for (let card of card3Back) {
+        card.style.animation = "allCardsFlipBackForwards forwards";
+      }
       for (let card of card1) {
         card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
       }
@@ -256,16 +286,83 @@ function rotatingRowsForwards() {
       for (let card of card3) {
         card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
       }
+      cardsFlipped = false;
+      cardsActive = false;
       console.log(`Current Row Number: ${currentRowCounter}`);
     }, 500);
-    cardsFlipped = false;
+  } else if (cardsFlipped === true && cardsActive === true) {
+    clearTimeout(flipForwardTimer);
+    cardRow[currentRowCounter].style.display = "none";
+    currentRowCounter = (currentRowCounter + 1) % cardRow.length;
+    cardRow[currentRowCounter].style.display = "flex";
+    for (let card of card1Front) {
+      card.style.animation = "allCardsFlipFrontForwards forwards";
+    }
+    for (let card of card1Back) {
+      card.style.animation = "allCardsFlipBackForwards forwards";
+    }
+    for (let card of card2Front) {
+      card.style.animation = "allCardsFlipFrontForwards forwards";
+    }
+    for (let card of card2Back) {
+      card.style.animation = "allCardsFlipBackForwards forwards";
+    }
+    for (let card of card3Front) {
+      card.style.animation = "allCardsFlipFrontForwards forwards";
+    }
+    for (let card of card3Back) {
+      card.style.animation = "allCardsFlipBackForwards forwards";
+    }
+    for (let card of card1) {
+      card.style.animation = "allCardsPositionUp 0.5s";
+    }
+    for (let card of card2) {
+      card.style.animation = "allCardsPositionUp 0.5s";
+    }
+    for (let card of card3) {
+      card.style.animation = "allCardsPositionUp 0.5s";
+    }
+    cardsActive = false;
+    cardsflipped = false;
+    console.log(`Current Row Number: ${currentRowCounter}`);
+  } else {
+    for (let card of card1Front) {
+      card.style.animation = "allCardsFlipBackForwards forwards";
+    }
+    for (let card of card1Back) {
+      card.style.animation = "allCardsFlipFrontForwards forwards";
+    }
+    for (let card of card2Front) {
+      card.style.animation = "allCardsFlipBackForwards forwards";
+    }
+    for (let card of card2Back) {
+      card.style.animation = "allCardsFlipFrontForwards forwards";
+    }
+    for (let card of card3Front) {
+      card.style.animation = "allCardsFlipBackForwards forwards";
+    }
+    for (let card of card3Back) {
+      card.style.animation = "allCardsFlipFrontForwards forwards";
+    }
+    for (let card of card1) {
+      card.style.animation = "allCardsPositionUp";
+    }
+    for (let card of card2) {
+      card.style.animation = "allCardsPositionUp";
+    }
+    for (let card of card3) {
+      card.style.animation = "allCardsPositionUp";
+    }
+    cardsflipped = true;
+    cardsActive = false;
   }
 }
 
 function rotatingRowsBackwards() {
   cardsRotating = true;
-  playPauseFunc();
-  if (cardsFlipped === false) {
+  pauseFunc();
+  if (cardsFlipped === false && cardsActive === false) {
+    cardsActive = true;
     for (let card of card1) {
       card.style.animation = "allCardsPositionDown ease-in-out 0.5s";
     }
@@ -275,7 +372,7 @@ function rotatingRowsBackwards() {
     for (let card of card3) {
       card.style.animation = "allCardsPositionDown ease-in-out 0.5s";
     }
-    setTimeout(() => {
+    flipBackwardTimer = setTimeout(() => {
       cardRow[currentRowCounter].style.display = "none";
       if (currentRowCounter > 0) {
         currentRowCounter = (currentRowCounter - 1) % cardRow.length;
@@ -316,12 +413,51 @@ function rotatingRowsBackwards() {
       for (let card of card3) {
         card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
       }
-      console.log(`Current Row Number: ${currentRowCounter}`);
+      cardsFlipped = true;
+      cardsActive = false;
+      console.log(`Current Row Number: ${currentRowCounter} -- Cards Flipped`);
     }, 500);
+  } else if (cardsFlipped == false && cardsActive === true) {
+    clearTimeout(flipBackwardTimer);
+    cardRow[currentRowCounter].style.display = "none";
+    if (currentRowCounter > 0) {
+      currentRowCounter = (currentRowCounter - 1) % cardRow.length;
+    } else {
+      currentRowCounter = cardRow.length - 1;
+    }
+    cardRow[currentRowCounter].style.display = "flex";
+    for (let card of card1Front) {
+      card.style.animation = "allCardsFlipBackForwards ease-in-out";
+    }
+    for (let card of card1Back) {
+      card.style.animation = "allCardsFlipFrontForwards ease-in-out";
+    }
+    for (let card of card2Front) {
+      card.style.animation = "allCardsFlipBackForwards ease-in-out";
+    }
+    for (let card of card2Back) {
+      card.style.animation = "allCardsFlipFrontForwards ease-in-out";
+    }
+    for (let card of card3Front) {
+      card.style.animation = "allCardsFlipBackForwards ease-in-out";
+    }
+    for (let card of card3Back) {
+      card.style.animation = "allCardsFlipFrontForwards ease-in-out";
+    }
+    for (let card of card1) {
+      card.style.animation = "allCardsPositionUp";
+    }
+    for (let card of card2) {
+      card.style.animation = "allCardsPositionUp";
+    }
+    for (let card of card3) {
+      card.style.animation = "allCardsPositionUp";
+    }
+    cardsActive = false;
     cardsFlipped = true;
-    console.log(`Current Row Number: ${currentRowCounter}`);
-    console.log(`Cards flipped: ${cardsFlipped}`);
-  } else {
+    console.log(`Current Row Number: ${currentRowCounter} -- Cards Flipped`);
+  } else if (cardsFlipped === true && cardsActive === false) {
+    cardsActive = true;
     for (let card of card1Front) {
       card.style.animation =
         "allCardsFlipFrontBackwards ease-in-out 0.5s forwards";
@@ -346,9 +482,31 @@ function rotatingRowsBackwards() {
       card.style.animation =
         "allCardsFlipBackBackwards ease-in-out 0.5s forwards";
     }
+    cardsActive = false;
     cardsFlipped = false;
     console.log(`Current Row Number: ${currentRowCounter}`);
-    console.log(`Cards flipped: ${cardsFlipped}`);
+  } else {
+    for (let card of card1Front) {
+      card.style.animation = "allCardsFlipFrontBackwards";
+    }
+    for (let card of card1Back) {
+      card.style.animation = "allCardsFlipBackBackwards";
+    }
+    for (let card of card2Front) {
+      card.style.animation = "allCardsFlipFrontBackwards";
+    }
+    for (let card of card2Back) {
+      card.style.animation = "allCardsFlipBackBackwards";
+    }
+    for (let card of card3Front) {
+      card.style.animation = "allCardsFlipFrontBackwards";
+    }
+    for (let card of card3Back) {
+      card.style.animation = "allCardsFlipBackBackwards";
+    }
+    cardsActive = false;
+    cardsFlipped = false;
+    console.log(`Current Row Number: ${currentRowCounter}`);
   }
 }
 
@@ -366,7 +524,7 @@ function toggleFullScreen() {
   }
 }
 
-window.onload = playPauseFunc();
+window.onload = playFunc();
 
 toggleBackwards.addEventListener("click", rotatingRowsBackwards);
 toggleForwards.addEventListener("click", rotatingRowsForwards);
