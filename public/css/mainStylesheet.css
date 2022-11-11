@@ -402,7 +402,7 @@
   height: 100%;
   width: 100%;
   position: relative;
-  top: 100vh;
+  top: 120vh;
   padding: 2rem;
 }
 @media only screen and (max-width: 1000px) {
@@ -899,7 +899,7 @@
 
 @keyframes cardPlacement1 {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   2.5% {
     top: 0vh;
@@ -908,18 +908,18 @@
     top: 0vh;
   }
   98% {
-    top: 100vh;
+    top: 120vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
 @keyframes cardPlacement2 {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   1% {
-    top: 100vh;
+    top: 120vh;
   }
   3.5% {
     top: 0vh;
@@ -928,18 +928,18 @@
     top: 0vh;
   }
   99% {
-    top: 100vh;
+    top: 120vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
 @keyframes cardPlacement3 {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   2% {
-    top: 100vh;
+    top: 120vh;
   }
   4.5% {
     top: 0vh;
@@ -948,7 +948,7 @@
     top: 0vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
 @keyframes card1FrontFlip {
@@ -1116,7 +1116,7 @@
 }
 @keyframes allCardsPositionUp {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   100% {
     top: 0vh;
@@ -1127,7 +1127,7 @@
     top: 0vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
 #page {
@@ -1580,16 +1580,6 @@
 html {
   font-size: 10px;
 }
-@media (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 3) {
-  html {
-    font-size: 5.76px;
-  }
-}
-@media (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: 5.76px;
-  }
-}
 @media (max-width: 1300px) {
   html {
     font-size: 8px;
@@ -1600,7 +1590,17 @@ html {
     font-size: 5.76px;
   }
 }
-@media (max-width: 490px) {
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 3) {
+  html {
+    font-size: 5.76px;
+  }
+}
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 2) {
+  html {
+    font-size: 5.76px;
+  }
+}
+@media (max-width: 490px) and (-webkit-device-pixel-ratio: 1) {
   html {
     font-size: 5.76px;
   }

@@ -41,7 +41,7 @@
   height: 100%;
   width: 100%;
   position: relative;
-  top: 100vh;
+  top: 120vh;
   padding: 2rem;
 
   @include respond(tablet-portrait) {
@@ -479,7 +479,7 @@
 
 @keyframes cardPlacement1 {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   2.5% {
     top: 0vh;
@@ -488,19 +488,19 @@
     top: 0vh;
   }
   98% {
-    top: 100vh;
+    top: 120vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
 
 @keyframes cardPlacement2 {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   1% {
-    top: 100vh;
+    top: 120vh;
   }
   3.5% {
     top: 0vh;
@@ -509,19 +509,19 @@
     top: 0vh;
   }
   99% {
-    top: 100vh;
+    top: 120vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
 
 @keyframes cardPlacement3 {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   2% {
-    top: 100vh;
+    top: 120vh;
   }
   4.5% {
     top: 0vh;
@@ -530,7 +530,7 @@
     top: 0vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
 
@@ -706,7 +706,7 @@
 
 @keyframes allCardsPositionUp {
   0% {
-    top: 100vh;
+    top: 120vh;
   }
   100% {
     top: 0vh;
@@ -718,6 +718,6 @@
     top: 0vh;
   }
   100% {
-    top: 100vh;
+    top: 120vh;
   }
 }
