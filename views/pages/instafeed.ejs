@@ -13,13 +13,14 @@
         <main class="main" id="mainDisplay">
             <div class="controlsAndCards">
                 <div class="toggleControls"><button id="toggleBackwards"><</button></div>
-            <% let counter = 0%>
+                <% let counter = 0%>
                 <% for (let post of finalDisplayArray) { %>
                     <% if (post.length === 6) { %>
                         <div class="cardRow" id='cardRow<%=counter%>'>
                             <div class="col">
                                 <div class="card card1" id="card1">
                                     <div class="cardSide cardSideFront card1Front" id='card1Front'>
+                                        <div class="imgContainer">
                                         <% if (post[0].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardFront imgCard1Front' id='imgCard1Front' autoplay loop muted>
                                                 <source src=<%=post[0].imgSource%>
@@ -29,6 +30,7 @@
                                         <% } else { %>
                                             <img class='img imgCardFront imgCard1Front' id='imgCard1Front'src='<%=post[0].imgSource%>'>   
                                         <% } %>
+                                        </div>
                                         <div class="textbox textboxFront">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[0].date%></h3>
@@ -66,6 +68,7 @@
                                         </div>
                                     </div>
                                     <div class="cardSide cardSideBack card1Back" id='card1Back'>
+                                        <div class="imgContainer">
                                         <% if (post[1].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardBack imgCard1Back' id='imgCard1Back' autoplay loop muted>
                                                 <source src=<%=post[1].imgSource%>
@@ -75,6 +78,7 @@
                                         <% } else { %>
                                             <img class='img imgCardBack imgCard1Back' id='imgCard1Back' src='<%=post[1].imgSource%>'>   
                                         <% } %>
+                                        </div>
                                         <div class="textbox textboxBack">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[1].date%></h3>
@@ -116,6 +120,7 @@
                             <div class="col">
                                 <div class="card card2" id="card2">
                                     <div class="cardSide cardSideFront card2Front" id='card2Front'>
+                                        <div class="imgContainer">
                                         <% if (post[2].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardFront imgCard2Front' id='imgCard2Front' autoplay loop muted>
                                                 <source src=<%=post[2].imgSource%>
@@ -125,6 +130,7 @@
                                         <% } else { %>
                                             <img class='img imgCardFront imgCard2Front' id='imgCard2Front'src='<%=post[2].imgSource%>'>   
                                         <% } %>
+                                        </div>
                                         <div class="textbox textboxFront">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[2].date%></h3>
@@ -162,6 +168,7 @@
                                         </div>
                                     </div>
                                     <div class="cardSide cardSideBack card2Back" id='card2Back'>
+                                        <div class="imgContainer">
                                         <% if (post[3].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardBack imgCard2Back' id='imgCard2Back' autoplay loop muted>
                                                 <source src=<%=post[3].imgSource%>
@@ -171,6 +178,7 @@
                                         <% } else { %>
                                             <img class='img imgCardBack imgCard2Back' id='imgCard2Back'src='<%=post[3].imgSource%>'>   
                                         <% } %>
+                                        </div>
                                         <div class="textbox textboxBack">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[3].date%></h3>
@@ -212,6 +220,7 @@
                             <div class="col">
                                 <div class="card card3" id="card3">
                                     <div class="cardSide cardSideFront card3Front" id='card3Front'>
+                                        <div class="imgContainer">
                                         <% if (post[4].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardFront imgCard3Front' id='imgCard3Front' autoplay loop muted>
                                                 <source src=<%=post[4].imgSource%>
@@ -221,6 +230,7 @@
                                         <% } else { %>
                                             <img class='img imgCardFront imgCard3Front' id='imgCard3Front'src='<%=post[4].imgSource%>'>   
                                         <% } %>
+                                        </div>
                                         <div class="textbox textboxFront">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[4].date%></h3>
@@ -258,6 +268,7 @@
                                         </div>
                                     </div>
                                     <div class="cardSide cardSideBack card3Back" id='card3Back'>
+                                        <div class="imgContainer">
                                         <% if (post[5].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardBack imgCard3Back' id='imgCard3Back' autoplay loop muted>
                                                 <source src=<%=post[5].imgSource%>
@@ -267,6 +278,7 @@
                                         <% } else { %>
                                             <img class='img imgCardBack imgCard3Back' id='imgCard3Back'src='<%=post[5].imgSource%>'>   
                                         <% } %>
+                                        </div>
                                         <div class="textbox textboxBack">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[5].date%></h3>
@@ -311,6 +323,7 @@
                             <div class="col">
                                 <div class="card card1" id="card1">
                                     <div class="cardSide cardSideFront card1Front" id='card1Front'>
+                                        <div class="imgContainer">
                                         <% if (post[0].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardFront imgCard1Front' id='imgCard1Front' autoplay loop muted>
                                                 <source src=<%=post[0].imgSource%>
@@ -320,7 +333,8 @@
                                         <% } else { %>
                                             <img class='img imgCardFront imgCard1Front' id='imgCard1Front'src='<%=post[0].imgSource%>'>   
                                         <% } %>
-                                        <div class="textbox">
+                                        </div>
+                                        <div class="textbox textboxFront">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[0].date%></h3>
                                                 <p class='caption'><%=post[0].text%></p>
@@ -339,7 +353,7 @@
                                                                 <% for (let name of post[0].studentNames) { %>
                                                                     <div class="projectNameContainer">
                                                                         <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
+                                                                        <h3 class='projectNames'><%=name.firstName%> <%=name.lastName%></h3>
                                                                     </div>
                                                                 <% } %> 
                                                             </div>
@@ -348,7 +362,7 @@
                                                         <% for (let name of post[0].studentNames) { %>
                                                             <div class='profile'>
                                                                 <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                <h3 class='profileName'><%=`${name.firstName} ${name.lastName}`%></h3>
+                                                                <h3 class='profileName'><%=name.firstName%><br><%=name.lastName%></h3>
                                                             </div>
                                                         <% } %>
                                                     <% } %> 
@@ -357,6 +371,7 @@
                                         </div>
                                     </div>
                                     <div class="cardSide cardSideBack card1Back" id='card1Back'>
+                                        <div class="imgContainer">
                                         <% if (post[1].mediaType === 'VIDEO') { %>
                                             <video class='img imgCardBack imgCard1Back' id='imgCard1Back' autoplay loop muted>
                                                 <source src=<%=post[1].imgSource%>
@@ -364,204 +379,10 @@
                                                 Sorry, your browser doesn't support embedded videos.
                                             </video>
                                         <% } else { %>
-                                            <img class='img imgCardBack imgCard1Back' id='imgCard1Back'src='<%=post[1].imgSource%>'>   
+                                            <img class='img imgCardBack imgCard1Back' id='imgCard1Back' src='<%=post[1].imgSource%>'>   
                                         <% } %>
-                                        <div class="textbox">
-                                            <div class="dateAndCaption">
-                                                <h3 class='date'><%=post[1].date%></h3>
-                                                <p class='caption'><%=post[1].text%></p>
-                                            </div>
-                                            <div class='profiles'>
-                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
-                                                <div class='profileList'>
-                                                    <% if (post[1].projectName != undefined) { %>
-                                                        <div class='projectProfile'>
-                                                            <div class="projectPicContainer">
-                                                                <img class='projectPic' src='/media/icons/<%=post[3].projectHashtag%>.png'>
-                                                                <h3 class='projectTitle'><%=post[1].projectName%></h3>
-                                                            </div>
-                                                            <div class="spacer"></div>
-                                                            <div class="projectNamesContainer">
-                                                                <% for (let name of post[1].studentNames) { %>
-                                                                    <div class="projectNameContainer">
-                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                                    </div>
-                                                                <% } %> 
-                                                            </div>
-                                                        </div>
-                                                    <% } else { %>
-                                                        <% for (let name of post[1].studentNames) { %>
-                                                            <div class='profile'>
-                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                <h3 class='profileName'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                            </div>
-                                                        <% } %>
-                                                    <% } %> 
-                                                </div>
-                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card card2" id="card2">
-                                    <div class="cardSide cardSideFront card2Front" id='card2Front'>
-                                        <% if (post[2].mediaType === 'VIDEO') { %>
-                                            <video class='img imgCardFront imgCard2Front' id='imgCard2Front' autoplay loop muted>
-                                                <source src=<%=post[2].imgSource%>
-                                                        type="video/mp4">
-                                                Sorry, your browser doesn't support embedded videos.
-                                            </video>
-                                        <% } else { %>
-                                            <img class='img imgCardFront imgCard2Front' id='imgCard2Front'src='<%=post[2].imgSource%>'>   
-                                        <% } %>
-                                        <div class="textbox">
-                                            <div class="dateAndCaption">
-                                                <h3 class='date'><%=post[2].date%></h3>
-                                                <p class='caption'><%=post[2].text%></p>
-                                            </div>
-                                            <div class='profiles'>
-                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
-                                                <div class='profileList'>
-                                                    <% if (post[2].projectName != undefined) { %>
-                                                        <div class='projectProfile'>
-                                                            <div class="projectPicContainer">
-                                                                <img class='projectPic' src='/media/icons/<%=post[2].projectHashtag%>.png'>
-                                                                <h3 class='projectTitle'><%=post[2].projectName%></h3>
-                                                            </div>
-                                                            <div class="spacer"></div>
-                                                            <div class="projectNamesContainer">
-                                                                <% for (let name of post[2].studentNames) { %>
-                                                                    <div class="projectNameContainer">
-                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                                    </div>
-                                                                <% } %> 
-                                                            </div>
-                                                        </div>
-                                                    <% } else { %>
-                                                        <% for (let name of post[2].studentNames) { %>
-                                                            <div class='profile'>
-                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                <h3 class='profileName'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                            </div>
-                                                        <% } %>
-                                                    <% } %> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cardSide cardSideBack card2Back" id='card2Back'>
-                                        <% if (post[3].mediaType === 'VIDEO') { %>
-                                            <video class='img imgCardBack imgCard2Back' id='imgCard2Back' autoplay loop muted>
-                                                <source src=<%=post[3].imgSource%>
-                                                        type="video/mp4">
-                                                Sorry, your browser doesn't support embedded videos.
-                                            </video>
-                                        <% } else { %>
-                                            <img class='img imgCardBack imgCard2Back' id='imgCard2Back'src='<%=post[3].imgSource%>'>   
-                                        <% } %>
-                                        <div class="textbox">
-                                            <div class="dateAndCaption">
-                                                <h3 class='date'><%=post[3].date%></h3>
-                                                <p class='caption'><%=post[3].text%></p>
-                                            </div>
-                                            <div class='profiles'>
-                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
-                                                <div class='profileList'>
-                                                    <% if (post[3].projectName != undefined) { %>
-                                                        <div class='projectProfile'>
-                                                            <div class="projectPicContainer">
-                                                                <img class='projectPic' src='/media/icons/<%=post[3].projectHashtag%>.png'>
-                                                                <h3 class='projectTitle'><%=post[3].projectName%></h3>
-                                                            </div>
-                                                            <div class="spacer"></div>
-                                                            <div class="projectNamesContainer">
-                                                                <% for (let name of post[3].studentNames) { %>
-                                                                    <div class="projectNameContainer">
-                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                                    </div>
-                                                                <% } %> 
-                                                            </div>
-                                                        </div>
-                                                    <% } else { %>
-                                                        <% for (let name of post[3].studentNames) { %>
-                                                            <div class='profile'>
-                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                <h3 class='profileName'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                            </div>
-                                                        <% } %>
-                                                    <% } %> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <% } else { %>
-                        <div class="cardRow" id='cardRow<%=counter%>'>
-                            <div class="col">
-                                <div class="card card1" id="card1">
-                                    <div class="cardSide cardSideFront card1Front" id='card1Front'>
-                                        <% if (post[0].mediaType === 'VIDEO') { %>
-                                            <video class='img imgCardFront imgCard1Front' id='imgCard1Front' autoplay loop muted>
-                                                <source src=<%=post[0].imgSource%>
-                                                        type="video/mp4">
-                                                Sorry, your browser doesn't support embedded videos.
-                                            </video>
-                                        <% } else { %>
-                                            <img class='img imgCardFront imgCard1Front' id='imgCard1Front'src='<%=post[0].imgSource%>'>   
-                                        <% } %>
-                                        <div class="textbox">
-                                            <div class="dateAndCaption">
-                                                <h3 class='date'><%=post[0].date%></h3>
-                                                <p class='caption'><%=post[0].text%></p>
-                                            </div>
-                                            <div class='profiles'>
-                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
-                                                <div class='profileList'>
-                                                    <% if (post[0].projectName != undefined) { %>
-                                                        <div class='projectProfile'>
-                                                            <div class="projectPicContainer">
-                                                                <img class='projectPic' src='/media/icons/<%=post[0].projectHashtag%>.png'>
-                                                                <h3 class='projectTitle'><%=post[0].projectName%></h3>
-                                                            </div>
-                                                            <div class="spacer"></div>
-                                                            <div class="projectNamesContainer">
-                                                                <% for (let name of post[0].studentNames) { %>
-                                                                    <div class="projectNameContainer">
-                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                                    </div>
-                                                                <% } %> 
-                                                            </div>
-                                                        </div>
-                                                    <% } else { %>
-                                                        <% for (let name of post[0].studentNames) { %>
-                                                            <div class='profile'>
-                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                <h3 class='profileName'><%=`${name.firstName} ${name.lastName}`%></h3>
-                                                            </div>
-                                                        <% } %>
-                                                    <% } %> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cardSide cardSideBack card1Back" id='card1Back'>
-                                        <% if (post[1].mediaType === 'VIDEO') { %>
-                                            <video class='img imgCardBack imgCard1Back' id='imgCard1Back' autoplay loop muted>
-                                                <source src=<%=post[1].imgSource%>
-                                                        type="video/mp4">
-                                                Sorry, your browser doesn't support embedded videos.
-                                            </video>
-                                        <% } else { %>
-                                            <img class='img imgCardBack imgCard1Back' id='imgCard1Back'src='<%=post[1].imgSource%>'>   
-                                        <% } %>
-                                        <div class="textbox">
+                                        <div class="textbox textboxBack">
                                             <div class="dateAndCaption">
                                                 <h3 class='date'><%=post[1].date%></h3>
                                                 <p class='caption'><%=post[1].text%></p>
@@ -589,7 +410,210 @@
                                                         <% for (let name of post[1].studentNames) { %>
                                                             <div class='profile'>
                                                                 <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
-                                                                <h3 class='profileName'><%=`${name.firstName} ${name.lastName}`%></h3>
+                                                                <h3 class='profileName'><%=name.firstName%><br><%=name.lastName%></h3>
+                                                            </div>
+                                                        <% } %>
+                                                    <% } %> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card card2" id="card2">
+                                    <div class="cardSide cardSideFront card2Front" id='card2Front'>
+                                        <div class="imgContainer">
+                                        <% if (post[2].mediaType === 'VIDEO') { %>
+                                            <video class='img imgCardFront imgCard2Front' id='imgCard2Front' autoplay loop muted>
+                                                <source src=<%=post[2].imgSource%>
+                                                        type="video/mp4">
+                                                Sorry, your browser doesn't support embedded videos.
+                                            </video>
+                                        <% } else { %>
+                                            <img class='img imgCardFront imgCard2Front' id='imgCard2Front'src='<%=post[2].imgSource%>'>   
+                                        <% } %>
+                                        </div>
+                                        <div class="textbox textboxFront">
+                                            <div class="dateAndCaption">
+                                                <h3 class='date'><%=post[2].date%></h3>
+                                                <p class='caption'><%=post[2].text%></p>
+                                            </div>
+                                            <div class='profiles'>
+                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
+                                                <div class='profileList'>
+                                                    <% if (post[2].projectName != undefined) { %>
+                                                        <div class='projectProfile'>
+                                                            <div class="projectPicContainer">
+                                                                <img class='projectPic' src='/media/icons/<%=post[2].projectHashtag%>.png'>
+                                                                <h3 class='projectTitle'><%=post[2].projectName%></h3>
+                                                            </div>
+                                                            <div class="spacer"></div>
+                                                            <div class="projectNamesContainer">
+                                                                <% for (let name of post[2].studentNames) { %>
+                                                                    <div class="projectNameContainer">
+                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
+                                                                    </div>
+                                                                <% } %> 
+                                                            </div>
+                                                        </div>
+                                                    <% } else { %>
+                                                        <% for (let name of post[2].studentNames) { %>
+                                                            <div class='profile'>
+                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                <h3 class='profileName'><%=name.firstName%><br><%=name.lastName%></h3>
+                                                            </div>
+                                                        <% } %>
+                                                    <% } %> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardSide cardSideBack card2Back" id='card2Back'>
+                                        <div class="imgContainer">
+                                        <% if (post[3].mediaType === 'VIDEO') { %>
+                                            <video class='img imgCardBack imgCard2Back' id='imgCard2Back' autoplay loop muted>
+                                                <source src=<%=post[3].imgSource%>
+                                                        type="video/mp4">
+                                                Sorry, your browser doesn't support embedded videos.
+                                            </video>
+                                        <% } else { %>
+                                            <img class='img imgCardBack imgCard2Back' id='imgCard2Back'src='<%=post[3].imgSource%>'>   
+                                        <% } %>
+                                        </div>
+                                        <div class="textbox textboxBack">
+                                            <div class="dateAndCaption">
+                                                <h3 class='date'><%=post[3].date%></h3>
+                                                <p class='caption'><%=post[3].text%></p>
+                                            </div>
+                                            <div class='profiles'>
+                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
+                                                <div class='profileList'>
+                                                    <% if (post[3].projectName != undefined) { %>
+                                                        <div class='projectProfile'>
+                                                            <div class="projectPicContainer">
+                                                                <img class='projectPic' src='/media/icons/<%=post[3].projectHashtag%>.png'>
+                                                                <h3 class='projectTitle'><%=post[3].projectName%></h3>
+                                                            </div>
+                                                            <div class="spacer"></div>
+                                                            <div class="projectNamesContainer">
+                                                                <% for (let name of post[3].studentNames) { %>
+                                                                    <div class="projectNameContainer">
+                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
+                                                                    </div>
+                                                                <% } %> 
+                                                            </div>
+                                                        </div>
+                                                    <% } else { %>
+                                                        <% for (let name of post[3].studentNames) { %>
+                                                            <div class='profile'>
+                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                <h3 class='profileName'><%=name.firstName%><br><%=name.lastName%></h3>
+                                                            </div>
+                                                        <% } %>
+                                                    <% } %> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% } else { %>
+                        <div class="cardRow" id='cardRow<%=counter%>'>
+                            <div class="col">
+                                <div class="card card1" id="card1">
+                                    <div class="cardSide cardSideFront card1Front" id='card1Front'>
+                                        <div class="imgContainer">
+                                        <% if (post[0].mediaType === 'VIDEO') { %>
+                                            <video class='img imgCardFront imgCard1Front' id='imgCard1Front' autoplay loop muted>
+                                                <source src=<%=post[0].imgSource%>
+                                                        type="video/mp4">
+                                                Sorry, your browser doesn't support embedded videos.
+                                            </video>
+                                        <% } else { %>
+                                            <img class='img imgCardFront imgCard1Front' id='imgCard1Front'src='<%=post[0].imgSource%>'>   
+                                        <% } %>
+                                        </div>
+                                        <div class="textbox textboxFront">
+                                            <div class="dateAndCaption">
+                                                <h3 class='date'><%=post[0].date%></h3>
+                                                <p class='caption'><%=post[0].text%></p>
+                                            </div>
+                                            <div class='profiles'>
+                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
+                                                <div class='profileList'>
+                                                    <% if (post[0].projectName != undefined) { %>
+                                                        <div class='projectProfile'>
+                                                            <div class="projectPicContainer">
+                                                                <img class='projectPic' src='/media/icons/<%=post[0].projectHashtag%>.png'>
+                                                                <h3 class='projectTitle'><%=post[0].projectName%></h3>
+                                                            </div>
+                                                            <div class="spacer"></div>
+                                                            <div class="projectNamesContainer">
+                                                                <% for (let name of post[0].studentNames) { %>
+                                                                    <div class="projectNameContainer">
+                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                        <h3 class='projectNames'><%=name.firstName%> <%=name.lastName%></h3>
+                                                                    </div>
+                                                                <% } %> 
+                                                            </div>
+                                                        </div>
+                                                    <% } else { %>
+                                                        <% for (let name of post[0].studentNames) { %>
+                                                            <div class='profile'>
+                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                <h3 class='profileName'><%=name.firstName%><br><%=name.lastName%></h3>
+                                                            </div>
+                                                        <% } %>
+                                                    <% } %> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardSide cardSideBack card1Back" id='card1Back'>
+                                        <div class="imgContainer">
+                                        <% if (post[1].mediaType === 'VIDEO') { %>
+                                            <video class='img imgCardBack imgCard1Back' id='imgCard1Back' autoplay loop muted>
+                                                <source src=<%=post[1].imgSource%>
+                                                        type="video/mp4">
+                                                Sorry, your browser doesn't support embedded videos.
+                                            </video>
+                                        <% } else { %>
+                                            <img class='img imgCardBack imgCard1Back' id='imgCard1Back' src='<%=post[1].imgSource%>'>   
+                                        <% } %>
+                                        </div>
+                                        <div class="textbox textboxBack">
+                                            <div class="dateAndCaption">
+                                                <h3 class='date'><%=post[1].date%></h3>
+                                                <p class='caption'><%=post[1].text%></p>
+                                            </div>
+                                            <div class='profiles'>
+                                                <h4 class='sampleText'>Sample prepared and photographed by:</h4>
+                                                <div class='profileList'>
+                                                    <% if (post[1].projectName != undefined) { %>
+                                                        <div class='projectProfile'>
+                                                            <div class="projectPicContainer">
+                                                                <img class='projectPic' src='/media/icons/<%=post[1].projectHashtag%>.png'>
+                                                                <h3 class='projectTitle'><%=post[1].projectName%></h3>
+                                                            </div>
+                                                            <div class="spacer"></div>
+                                                            <div class="projectNamesContainer">
+                                                                <% for (let name of post[1].studentNames) { %>
+                                                                    <div class="projectNameContainer">
+                                                                        <img class='projectNamesPic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                        <h3 class='projectNames'><%=`${name.firstName} ${name.lastName}`%></h3>
+                                                                    </div>
+                                                                <% } %> 
+                                                            </div>
+                                                        </div>
+                                                    <% } else { %>
+                                                        <% for (let name of post[1].studentNames) { %>
+                                                            <div class='profile'>
+                                                                <img class='profilePic' src='/media/studentHeadshots/<%=name.instaName%>.jpg'>
+                                                                <h3 class='profileName'><%=name.firstName%><br><%=name.lastName%></h3>
                                                             </div>
                                                         <% } %>
                                                     <% } %> 
@@ -614,12 +638,12 @@
                         </button>
                     </div>
                 </div> 
+                <div class="toggleControlsPhone">
+                    <div class="togglePhoneArrows" id="togglePhoneBackwards"><</div>
+                    <div class="togglePhoneArrows" id="togglePhonePlayPause"><i class="material-icons" id="pauseSymbol">pause</i><i class="material-icons" id="playSymbol">play_arrow</i></div>
+                    <div class="togglePhoneArrows" id="togglePhoneForwards">></div>
+                </div> 
             </div>
-            <div class="toggleControlsPhone">
-                <div class="togglePhoneArrows" id="togglePhoneBackwards"><</div>
-                <div class="togglePhoneArrows" id="togglePhonePlayPause"><i class="material-icons" id="pauseSymbol">pause</i><i class="material-icons" id="playSymbol">play_arrow</i></div>
-                <div class="togglePhoneArrows" id="togglePhoneForwards">></div>
-            </div> 
             <%- include('../partials/footer')%>
         </main>
          

@@ -20,9 +20,10 @@
 
 html {
     font-size: 10px;
+    @media (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 3) {font-size: 5.76px;} //phone pixel ratio 3:1
+    @media (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2){font-size: 5.76px;} //phone pixel ratio 2:1
     @media (max-width: 1300px) {font-size: 8px;} //tablet landscape
-    @media (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 3) {font-size: 5.76px;} //iphone pixel 3:1
-    @media (max-width: 1000px) {font-size: 8px;} //tablet portrait
+    @media (max-width: 1000px) {font-size: 5.76px;} //tablet portrait
     @media (max-width: 490px) {font-size: 5.76px;} //phone portrait large
     @media (max-width: 380px) {font-size: 4.48px;} //phone portrait small
     @media (min-width: 1500px) {font-size: 10px;} // desktop

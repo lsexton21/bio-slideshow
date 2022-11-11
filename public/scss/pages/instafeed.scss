@@ -1,29 +1,64 @@
+.controlsAndCards {
+  @include flexbox(row, center, center);
+  height: calc(100% - 8rem);
+  width: 100%;
+
+  @include respond(tablet-portrait) {
+    @include flexbox(column, space-between, center);
+    height: 100%;
+  }
+}
+
 .cardRow {
   @include flexbox(row, space-between, center);
-  width: 104rem;
+  width: 90%;
+  height: 100%;
+  max-width: 115rem;
   display: none;
 
   @include respond(tablet-portrait) {
-    @include flexbox(column, center, space-around);
+    @include flexbox(column, center, center);
     display: none;
+    width: 100%;
+    height: calc(100% - 10rem);
+    max-width: none;
+  }
+}
+
+.col {
+  @include flexbox(row, center, center);
+  width: 33%;
+  height: 100%;
+
+  @include respond(tablet-portrait) {
+    width: 100%;
+    height: 33%;
   }
 }
 
 .card {
   visibility: hidden;
-  height: 75rem;
-  width: 33rem;
+  height: 100%;
+  width: 100%;
   position: relative;
   top: 100vh;
+  padding: 2rem;
 
   @include respond(tablet-portrait) {
-    height: 41rem;
-    width: 86rem;
-    margin-top: 2rem;
+    max-height: none;
+    height: 100%;
+    width: 95%;
+    max-width: 100%;
+  }
+
+  @include respond(phone-portrait-large) {
+    padding: 1rem;
   }
 
 
   .cardSide {
+    height: 100%;
+    width: 100%;
     opacity: 1;
     visibility: visible;
     @include flexbox(column, center, center);
@@ -36,63 +71,84 @@
 
   .cardSideBack {
     position: relative;
-    bottom: 75rem;
+    bottom: 100%;
     backface-visibility: hidden;
     opacity: 0;
     transform: rotatey(-180deg);
-
-    @include respond(tablet-portrait) {
-      bottom: 41rem;
-    }
   }
 
   .textbox {
-    height: 44.5rem;
-    width: 33rem;
     background-color: $color-card;
     border: 0.1rem solid $color-cardBorder;
     @include flexbox(column, flex-end, center);
     border-radius: 1rem;
     color: $color-cardText;
     font-family: "PT Sans Narrow", sans-serif;
+    height: 66%;
+    width: 100%;
+    padding: 2rem;
 
     @include respond(tablet-portrait) {
-      @include flexbox(column, flex-start, flex-end);
-      padding-right: 1rem;
-      height: 41rem;
-      width: 36rem;
+      @include flexbox(row, flex-start, flex-end);
+      height: 60%;
+      width: 100%;
+      padding: 1rem;
+      padding-left: 4rem;
     }
+    @include respond(phone-portrait-large) {
+      @include flexbox(column, flex-start, flex-end);
+      height: 100%;
+      width: 66%;
+      padding-left: 3rem;
+    }
+
     
 
     .dateAndCaption {
       @include flexbox(column, center, center);
-        height: 19rem;
-        width: 31rem;
+      width: 100%;
+      height: 43%;
+      margin-top: 3rem;
+      margin-bottom: 0.5rem;
 
       @include respond(tablet-portrait) {
-        height: 19rem;
-        width: 32rem;
+        width: 40%;
+        margin-bottom: 0;
+        margin-top: 0rem;
+        margin-right: 1rem;
+        height: 100%;
       }
-      .date {
-        @include flexbox(row, right, flex-end);
-        height: 5rem;
+
+      @include respond(phone-portrait-large) {
         width: 100%;
+        margin-right: 0rem;
+        margin-bottom: 0.5rem;
+        height: 43%;
+      }
+
+      .date {
+        @include flexbox(row, right, center);
+        width: 100%;
+        height: 10%;
         margin-bottom: 1rem;
-        margin-right: 0.5rem;
+        padding-right: 1rem;
         color: $color-black;
         font-size: 2.3rem;
         font-weight: 300;
 
         @include respond(tablet-portrait) {
-          margin-right: 1rem;
-          width: 100%;
-          height: 5rem;
-          font-size: 2.3rem;
+          @include flexbox(row, center, center);
+          padding-right: 0rem;
+          
         }
+        @include respond(phone-portrait-large) {
+          @include flexbox(row, right, center);
+          padding-right: 1rem;
+        }        
       }
       
       .caption {
-        height: 12rem;
+        height: 90%;
         width: 100%;
         box-shadow: inset 0.1rem 0.1rem 0.2rem black;
         background-color: $color-textbox;
@@ -101,31 +157,36 @@
         font-weight: 100;
         padding: 1rem;
         padding-top: 0.5rem;
-        margin-bottom: 1rem;
         overflow: hidden;
         border-radius: 0.5rem;
-
-        @include respond(tablet-portrait) {
-          width: 32rem;
-          height: 13rem;
-        }
       }
-      }
+    }
 
     .profiles {
       @include flexbox(column, center, space-between);
       box-shadow: inset 0.1rem 0.1rem 0.2rem black;
-      width: 31rem;
-      height: 23rem;
+      width: 100%;
+      height: 57%;
       background-color: $color-textbox;
-      margin-bottom: 1rem;
+      margin-top: 0.5rem;
       border-radius: 0.5rem;
       font-weight: 300;
+      padding: 1rem;
 
       @include respond(tablet-portrait) {
         @include flexbox(column, flex-start, center);
-        width: 32rem;
-        height: 21rem;
+        width: 60%;
+        height: 100%;
+        margin-top: 0rem;
+        margin-left: 1rem;
+      }
+
+      @include respond(phone-portrait-large) {
+        @include flexbox(column, flex-start, center);
+        width: 100%;
+        height: 57%;
+        margin-left: 0rem;
+        margin-top: 0.5rem;
       }
 
       .sampleText {
@@ -139,11 +200,11 @@
 
       .profileList {
         @include flexbox(row, space-evenly, center);
-        height: 18rem;
+        height: 95%;
 
         @include respond(tablet-portrait) {
           @include flexbox(row, space-evenly, center);
-          width: 30rem;
+          width: 100%;
         }
 
         .projectProfile {
@@ -152,7 +213,7 @@
 
           .projectPicContainer {
             @include flexbox(column, center, center);
-            width: 15rem;
+            max-width: 40%;
 
             .projectPic {
               height: 6rem;
@@ -161,6 +222,16 @@
               background-color: $color-black;
               border-radius: 50%;
               border: 0.1rem solid white;
+
+              @include respond(tablet-portrait) {
+                height: 9rem;
+                width: 9rem;
+              }
+              
+              @include respond(phone-portrait-large) {
+                height: 6rem;
+                width: 6rem;
+              }
             }
             .projectTitle {
               overflow-wrap: break-word;
@@ -181,7 +252,7 @@
 
           .projectNamesContainer {
             @include flexbox(column, center, flex-start);
-            width: 23rem;
+            max-width: 60%;
             margin-left: 0.7rem;
           }
           
@@ -189,11 +260,21 @@
             @include flexbox (row, center, center);
 
             .projectNamesPic {
-              height: 5rem;
-              width: 5rem;
+              height: 4.7rem;
+              width: 4.7rem;
               margin: 0.3rem;
               border-radius: 50%;
               border: 0.1rem solid black;
+
+              @include respond(tablet-portrait) {
+                height: 7.5rem;
+                width: 7.5rem;
+              }
+              
+              @include respond(phone-portrait-large) {
+                height: 4.7rem;
+                width: 4.7rem;
+              }
             }
             
             .projectNames {
@@ -209,6 +290,7 @@
 
         .profile {
           @include flexbox(column, space-around, flex-start);
+          max-width: 45%;
 
           @include respond(tablet-portrait) {
             @include flexbox(column, space-around, center);
@@ -216,8 +298,8 @@
 
           .profilePic {
             @include flexbox(row, center, center);
-            height: 9rem;
-            width: 9rem;
+            width: 90%;
+            aspect-ratio: 1 / 1;
             margin-top: 0.5rem;
             border-radius: 50%;
             border: 0.2rem solid $color-black;
@@ -228,7 +310,6 @@
             font-weight: lighter;
             text-align: center;
             width: 100%;
-            height: 5rem;
             font-size: 1.8rem;
             margin-top: 1rem;
           }
@@ -238,22 +319,38 @@
     }
   }
 
-  .img {
-    height: 30rem;
-    width: 30rem;
-    position: relative;
-    top: 2rem;
-    background-color: white;
-    box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.8rem $color-imgBorder;
-    border-radius: 10%;
+  .imgContainer {
+    @include flexbox(row, center, flex-end);
+    width: 100%;
 
     @include respond(tablet-portrait) {
-      top: 0rem;
-      left: 1rem;
-      height: 28rem;
-      width: 28rem;
+      @include flexbox(row, flex-end, center);
+      width: auto;
+      height: 100%;
+    }
+
+    .img {
+      width: 90%;
+      position: relative;
+      aspect-ratio: 1/1;
+      top: 2rem;
+      background-color: white;
+      box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.8rem $color-imgBorder;
+      border-radius: 10%;
+  
+      @include respond(tablet-portrait) {
+        top: 0rem;
+        height: 95%;
+        width: auto;
+        left: 2rem;
+      }
+      @include respond(phone-portrait-large) {
+        height: 80%;
+        left: 1rem;
+      }
     }
   }
+  
 }
 
 .toggleControls {
@@ -294,6 +391,7 @@
     
         &:active {
             background-color: rgb(255, 255, 255);
+            box-shadow: none;
         }
     }
 
@@ -334,10 +432,9 @@
 }
 
 .toggleControlsPhone {
-  height: 8rem;
+  height: 10rem;
   width: 100%;
   display: none;
-  font-size: 7rem;
   position: sticky;
   bottom: 0;
   border: 1px solid $color-cardBorder;
@@ -346,6 +443,7 @@
   .togglePhoneArrows {
     height: 100%;
     width: 100%;
+    font-size: 7rem;
     border: 1px solid $color-cardBorder;
     background-color: $color-card;
     border: 1px solid $color-cardBorder;
@@ -381,58 +479,58 @@
 
 @keyframes cardPlacement1 {
   0% {
-    top: 0vh;
+    top: 100vh;
   }
   2.5% {
-    top: 100vh;
+    top: 0vh;
   }
   95.5% {
-    top: 100vh;
+    top: 0vh;
   }
   98% {
-    top: 0vh;
+    top: 100vh;
   }
   100% {
-    top: 0vh;
+    top: 100vh;
   }
 }
 
 @keyframes cardPlacement2 {
   0% {
-    top: 0vh;
+    top: 100vh;
   }
   1% {
-    top: 0vh;
+    top: 100vh;
   }
   3.5% {
-    top: 100vh;
+    top: 0vh;
   }
   96.5% {
-    top: 100vh;
+    top: 0vh;
   }
   99% {
-    top: 0vh;
+    top: 100vh;
   }
   100% {
-    top: 0vh;
+    top: 100vh;
   }
 }
 
 @keyframes cardPlacement3 {
   0% {
-    top: 0vh;
+    top: 100vh;
   }
   2% {
-    top: 0vh;
+    top: 100vh;
   }
   4.5% {
-    top: 100vh;
+    top: 0vh;
   }
   97.5% {
-    top: 100vh;
+    top: 0vh;
   }
   100% {
-    top: 0vh;
+    top: 100vh;
   }
 }
 
@@ -608,22 +706,18 @@
 
 @keyframes allCardsPositionUp {
   0% {
-    opacity: 0;
     top: 100vh;
   }
   100% {
-    opacity: 1;
     top: 0vh;
   }
 }
 
 @keyframes allCardsPositionDown {
   0% {
-    opacity: 1;
     top: 0vh;
   }
   100% {
-    opacity: 0;
     top: 100vh;
   }
 }

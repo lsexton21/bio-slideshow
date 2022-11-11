@@ -7,18 +7,6 @@
   height: calc(100vh - 8rem);
   min-height: 88rem;
 
-    .controlsAndCards {
-      @include flexbox(row, center, flex-start);
-      margin-top: 5rem;
-      height: calc(100vh - 16rem);
-      min-height: 75rem;
-
-      @include respond(tablet-portrait) {
-        min-height: 132rem;
-        margin-top: 0rem;
-      }
-    }
-
     @include respond(tablet-portrait) {
       @include flexbox(column, space-between, center);
       min-height: 138rem;

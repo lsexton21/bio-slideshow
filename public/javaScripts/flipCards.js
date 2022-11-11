@@ -101,7 +101,6 @@ function rotatingRows() {
 function runRotatingCards() {
   cardsRotating = true;
   cardsFlipped = false;
-  console.log("Animation Started");
   console.log(`Current Row Number: ${currentRowCounter}`);
   cardsFlippedIntervalID = setInterval(cardsFlippedFunc, flippedDelay);
   cardRow[currentRowCounter].style.display = "flex";
@@ -109,58 +108,60 @@ function runRotatingCards() {
 }
 
 function pauseFunc() {
-  clearInterval(intervalID);
-  clearInterval(cardsFlippedIntervalID);
-  for (let img of imgCard1Front) {
-    img.style.animationPlayState = "paused";
+  if (cardsRotating === true) {
+    clearInterval(intervalID);
+    clearInterval(cardsFlippedIntervalID);
+    for (let img of imgCard1Front) {
+      img.style.animationPlayState = "paused";
+    }
+    for (let img of imgCard2Front) {
+      img.style.animationPlayState = "paused";
+    }
+    for (let img of imgCard3Front) {
+      img.style.animationPlayState = "paused";
+    }
+    for (let img of imgCard1Back) {
+      img.style.animationPlayState = "paused";
+    }
+    for (let img of imgCard2Back) {
+      img.style.animationPlayState = "paused";
+    }
+    for (let img of imgCard3Back) {
+      img.style.animationPlayState = "paused";
+    }
+    for (let card of card1) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card2) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card3) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card1Front) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card2Front) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card3Front) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card1Back) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card2Back) {
+      card.style.animationPlayState = "paused";
+    }
+    for (let card of card3Back) {
+      card.style.animationPlayState = "paused";
+    }
+    playPauseControls.innerText = "Play";
+    pauseSymbol.style.display = "none";
+    playSymbol.style.display = "inline";
+    cardsRotating = false;
+    console.log("Animation Paused");
   }
-  for (let img of imgCard2Front) {
-    img.style.animationPlayState = "paused";
-  }
-  for (let img of imgCard3Front) {
-    img.style.animationPlayState = "paused";
-  }
-  for (let img of imgCard1Back) {
-    img.style.animationPlayState = "paused";
-  }
-  for (let img of imgCard2Back) {
-    img.style.animationPlayState = "paused";
-  }
-  for (let img of imgCard3Back) {
-    img.style.animationPlayState = "paused";
-  }
-  for (let card of card1) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card2) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card3) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card1Front) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card2Front) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card3Front) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card1Back) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card2Back) {
-    card.style.animationPlayState = "paused";
-  }
-  for (let card of card3Back) {
-    card.style.animationPlayState = "paused";
-  }
-  playPauseControls.innerText = "Play";
-  pauseSymbol.style.display = "none";
-  playSymbol.style.display = "inline";
-  cardsRotating = false;
-  console.log("Animation Paused");
 }
 
 const playFunc = () => {
@@ -278,13 +279,13 @@ function rotatingRowsForwards() {
         card.style.animation = "allCardsFlipBackForwards forwards";
       }
       for (let card of card1) {
-        card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
+        card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
       }
       for (let card of card2) {
-        card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
+        card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
       }
       for (let card of card3) {
-        card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
+        card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
       }
       cardsFlipped = false;
       cardsActive = false;
@@ -296,7 +297,7 @@ function rotatingRowsForwards() {
     currentRowCounter = (currentRowCounter + 1) % cardRow.length;
     cardRow[currentRowCounter].style.display = "flex";
     for (let card of card1Front) {
-      card.style.animation = "allCardsFlipFrontForwards forwards";
+      card.style.animation = "allCardsFlipFrontForwards ease-in-out forwards";
     }
     for (let card of card1Back) {
       card.style.animation = "allCardsFlipBackForwards forwards";
@@ -314,13 +315,13 @@ function rotatingRowsForwards() {
       card.style.animation = "allCardsFlipBackForwards forwards";
     }
     for (let card of card1) {
-      card.style.animation = "allCardsPositionUp 0.5s";
+      card.style.animation = "allCardsPositionUp 0.5s ease-in-out forwards";
     }
     for (let card of card2) {
-      card.style.animation = "allCardsPositionUp 0.5s";
+      card.style.animation = "allCardsPositionUp 0.5s ease-in-out forwards";
     }
     for (let card of card3) {
-      card.style.animation = "allCardsPositionUp 0.5s";
+      card.style.animation = "allCardsPositionUp 0.5s ease-in-out forwards";
     }
     cardsActive = false;
     cardsflipped = false;
@@ -345,13 +346,13 @@ function rotatingRowsForwards() {
       card.style.animation = "allCardsFlipFrontForwards forwards";
     }
     for (let card of card1) {
-      card.style.animation = "allCardsPositionUp";
+      card.style.animation = "allCardsPositionUp ease-in-out forwards";
     }
     for (let card of card2) {
-      card.style.animation = "allCardsPositionUp";
+      card.style.animation = "allCardsPositionUp ease-in-out forwards";
     }
     for (let card of card3) {
-      card.style.animation = "allCardsPositionUp";
+      card.style.animation = "allCardsPositionUp ease-in-out forwards";
     }
     cardsflipped = true;
     cardsActive = false;
@@ -359,7 +360,6 @@ function rotatingRowsForwards() {
 }
 
 function rotatingRowsBackwards() {
-  cardsRotating = true;
   pauseFunc();
   if (cardsFlipped === false && cardsActive === false) {
     cardsActive = true;
@@ -381,37 +381,31 @@ function rotatingRowsBackwards() {
       }
       cardRow[currentRowCounter].style.display = "flex";
       for (let card of card1Front) {
-        card.style.animation =
-          "allCardsFlipBackForwards ease-in-out 0.1s forwards";
+        card.style.animation = "allCardsFlipBackForwards ease-in-out forwards";
       }
       for (let card of card1Back) {
-        card.style.animation =
-          "allCardsFlipFrontForwards ease-in-out 0.1s forwards";
+        card.style.animation = "allCardsFlipFrontForwards ease-in-out forwards";
       }
       for (let card of card2Front) {
-        card.style.animation =
-          "allCardsFlipBackForwards ease-in-out 0.1s forwards";
+        card.style.animation = "allCardsFlipBackForwards ease-in-out forwards";
       }
       for (let card of card2Back) {
-        card.style.animation =
-          "allCardsFlipFrontForwards ease-in-out 0.1s forwards";
+        card.style.animation = "allCardsFlipFrontForwards ease-in-out forwards";
       }
       for (let card of card3Front) {
-        card.style.animation =
-          "allCardsFlipBackForwards ease-in-out 0.1s forwards";
+        card.style.animation = "allCardsFlipBackForwards ease-in-out forwards";
       }
       for (let card of card3Back) {
-        card.style.animation =
-          "allCardsFlipFrontForwards ease-in-out 0.1s forwards";
+        card.style.animation = "allCardsFlipFrontForwards ease-in-out forwards";
       }
       for (let card of card1) {
-        card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
+        card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
       }
       for (let card of card2) {
-        card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
+        card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
       }
       for (let card of card3) {
-        card.style.animation = "allCardsPositionUp ease-in-out 0.5s";
+        card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
       }
       cardsFlipped = true;
       cardsActive = false;
@@ -427,31 +421,31 @@ function rotatingRowsBackwards() {
     }
     cardRow[currentRowCounter].style.display = "flex";
     for (let card of card1Front) {
-      card.style.animation = "allCardsFlipBackForwards ease-in-out";
+      card.style.animation = "allCardsFlipBackForwards forwards";
     }
     for (let card of card1Back) {
-      card.style.animation = "allCardsFlipFrontForwards ease-in-out";
+      card.style.animation = "allCardsFlipFrontForwards forwards";
     }
     for (let card of card2Front) {
-      card.style.animation = "allCardsFlipBackForwards ease-in-out";
+      card.style.animation = "allCardsFlipBackForwards forwards";
     }
     for (let card of card2Back) {
-      card.style.animation = "allCardsFlipFrontForwards ease-in-out";
+      card.style.animation = "allCardsFlipFrontForwards forwards";
     }
     for (let card of card3Front) {
-      card.style.animation = "allCardsFlipBackForwards ease-in-out";
+      card.style.animation = "allCardsFlipBackForwards forwards";
     }
     for (let card of card3Back) {
-      card.style.animation = "allCardsFlipFrontForwards ease-in-out";
+      card.style.animation = "allCardsFlipFrontForwards forwards";
     }
     for (let card of card1) {
-      card.style.animation = "allCardsPositionUp";
+      card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
     }
     for (let card of card2) {
-      card.style.animation = "allCardsPositionUp";
+      card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
     }
     for (let card of card3) {
-      card.style.animation = "allCardsPositionUp";
+      card.style.animation = "allCardsPositionUp ease-in-out 0.5s forwards";
     }
     cardsActive = false;
     cardsFlipped = true;
